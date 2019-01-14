@@ -29,7 +29,7 @@ public class TablePrinter {
         Params:
                - table: table matrix in this format: [rows][columns]
                - justifyCols: character code for justifying columns, l for left, r for right. In a table of three columns, for example,
-                              in which the left on is justified left, the middle on right and the right one is again left, it should be
+                              in which the left on is justified left, the middle one right and the right one is again left, it should be
                               like this: "lrl"
                - extraSpacingLength: length of extra spacing between columns
                - Border: border chars between columns

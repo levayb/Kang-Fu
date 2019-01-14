@@ -32,12 +32,19 @@ public class Main {
         */
 
         // Testing sets
-        Set<Fighter> fighters = new HashSet<Fighter>();
+        
+
+
         Fighter f1 = new Fighter("SSSSSSSSSSSSSSS", 100, 100, 100);
         Fighter f2 = new Fighter("sadfsdafsdafsa", 100, 100, 100);
-        fighters.add(f1);
-        fighters.add(f2);
-        Fighter f = (Fighter)fighters.toArray()[0];
-        System.out.println(f.getName());
+        Fighter[] fighters = new Fighter[] {new Fighter("Jack", 1, 1, 1),
+                                            new Fighter("Jane", 1, 1, 1),
+                                            new Fighter("Anyád", 1, 1, 1),
+                                            new Fighter("Tarzan", 1, 1, 1),
+                                            new Fighter("Róóóóland", 1, 1, 1),
+                                            new Fighter("Körszakáll", 1, 1, 1)
+                                            };
+
+
     }
 }
