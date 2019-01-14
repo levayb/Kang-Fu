@@ -8,7 +8,7 @@ public class PairGenerator {
     public PairGenerator() {
     }
 
-    public Object[][] pairMaker(Object[] objects) throws ValueException{
+    public Object[][] makePair(Object[] objects) throws ValueException{
         if (objects.length % 2 != 0){
             throw new ValueException();
         }
@@ -25,5 +25,6 @@ public class PairGenerator {
             }
             index ++;
         }
+        return pairs;
     }
 }

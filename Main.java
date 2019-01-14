@@ -45,6 +45,9 @@ public class Main {
                                             new Fighter("Körszakáll", 1, 1, 1)
                                             };
 
+        PairGenerator p = new PairGenerator();
+        p.makePair(fighters);
+
 
     }
 }
