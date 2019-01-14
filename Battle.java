@@ -27,6 +27,10 @@ public class Battle {
         }
         
     }
+    public void runTournament(Fighter[] fighter) {
+        pairGen = new PairGenerator();
+        
+    }
     private Fighter[] rollForInitiative(Fighter fighter1, Fighter fighter2) {
         /**
         Calculates which fighter starts game. Returns a pair of fighters in the order of initiative

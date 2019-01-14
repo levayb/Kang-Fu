@@ -37,14 +37,15 @@ public class Main {
 
         Fighter f1 = new Fighter("SSSSSSSSSSSSSSS", 100, 100, 100);
         Fighter f2 = new Fighter("sadfsdafsdafsa", 100, 100, 100);
-        Fighter[] fighters = new Fighter[] {new Fighter("Jack", 1, 1, 1),
-                                            new Fighter("Jane", 1, 1, 1),
-                                            new Fighter("Anyád", 1, 1, 1),
-                                            new Fighter("Tarzan", 1, 1, 1),
-                                            new Fighter("Róóóóland", 1, 1, 1),
-                                            new Fighter("Körszakáll", 1, 1, 1),
+        Fighter[] fighters = new Fighter[] {new Kangaroo("Jack", 1, 1, 1),
+                                            new Kangaroo("Jane", 1, 1, 1),
+                                            new Kangaroo("Anyád", 1, 1, 1),
+                                            new Kangaroo("Tarzan", 1, 1, 1),
+                                            new Kangaroo("Róóóóland", 1, 1, 1),
+                                            new Kangaroo("Körszakáll", 1, 1, 1),
                                             };
-
+        Kangaroo sdfsdf = (Kangaroo)fighters[0];
+        sdfsdf.tailStike();
         PairGenerator p = new PairGenerator();
         try {
             Fighter[][] pairs = p.makePair(fighters);
