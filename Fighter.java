@@ -31,7 +31,7 @@ public class Fighter {
         return this.attack;
     }
 
-    public boolean isDead(){
+    public boolean isDead() {
         if(this.health <= 0){
             return true;
         }else{
