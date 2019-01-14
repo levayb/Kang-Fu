@@ -17,8 +17,8 @@ public class Battle {
             fighterB = fighter1;
         }
         while (true) {
-            fighterA.attack(fighter2);
-            fighterB.attack(fighter1);
+            fighterA.attack(fighterB);
+            fighterB.attack(fighterA);
             if (fighterB.isDead()) {
                 return fighterA;
             } else if (fighterA.isDead()){
