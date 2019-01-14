@@ -7,7 +7,7 @@ public class Main {
         test();
     }
     public static void test() {
-        // Tester block
+        // Tester blocka
         Battle battle = new Battle();
         System.out.println("Test print");
         // ********

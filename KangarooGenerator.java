@@ -5,8 +5,6 @@ import java.util.Random;
  */
 public class KangarooGenerator {
 
-    private int kangarooOrder;
-
     public Kangaroo createKangaroo(){
         String[] names = {"Killer", "Józsi", "Joe", "Gizi", "Pakkó", "Robertó",
                             "Jimmi", "Oszkár", "Skippy", "Immre a pusztító"};
@@ -18,5 +16,12 @@ public class KangarooGenerator {
         int attack = rnd2.nextInt((10 - 5) + 1) + 5; 
         Kangaroo kangaroo = new Kangaroo(name, health, damageReduction, attack);
         return kangaroo;
+
+    }public Kangaroo[] createKangaroos(int num){
+        Kangaroo[] kangaroos = new Kangaroo[num];
+        for (int i = 0; i < num; i++) {
+            kangaroos[i] = this.createKangaroo(); 
+        }
+        return kangaroos;
     }
 }
