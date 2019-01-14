@@ -4,14 +4,16 @@ import java.util.Random;
  * KangarooGenerator
  */
 public class KangarooGenerator {
-    String[] names = {"Killer", "Józsi", "Joe", "Gizi", "Pakkó", "Robertó", "Chuck Norris", 
-                        "Jimmi", "Oszkár", "Skippy", "Immre a pusztító", "Chicitó", 
-                        "Consuela", "Róóóóland", "Anyád", "Lajkó", "Körszakáll", "Tarzan"};
-    
-    boolean[] used = new boolean[names.length];
                         
     public Kangaroo createKangaroo(){
 
+        String[] names = {"Killer", "Józsi", "Joe", "Gizi", "Pakkó", "Robertó", "Chuck Norris", 
+                            "Jimmi", "Oszkár", "Skippy", "Immre a pusztító", "Chicitó", 
+                            "Consuela", "Róóóóland", "Anyád", "Lajkó", "Körszakáll", "Tarzan",
+                            "Jenő", "Werner", "Piroska", "Nagyanyád", "Jácint", "Jefferson", "Nyenyere",
+                            "Tesco", "Java", "Kökörcsin", "Pára", "Nyúl", "Én", "Kurbli"};
+
+        boolean[] used = new boolean[names.length];
         int rnd = new Random().nextInt(names.length);
         while (!used[rnd]){
             rnd = new Random().nextInt(names.length);
@@ -29,10 +31,14 @@ public class KangarooGenerator {
     }public Kangaroo[] createKangaroos(int num){
         Kangaroo[] kangaroos = new Kangaroo[num];
         for (int i = 0; i < num; i++) {
+<<<<<<< HEAD
             if (this.createKangaroo()) {
                 
             }
             kangaroos[i] = this.createKangaroo(); 
+=======
+            kangaroos[i] = this.createKangaroo();
+>>>>>>> 81e1fa62c648a7ef2a81bdf48ac32c716e35d844
         }
         return kangaroos;
     }

@@ -13,7 +13,7 @@ public class PairGenerator {
             throw new IllegalArgumentException();
         }
         Random random = new Random();
-        Fighter[][] pairs = new Fighter[objects.length / 2][2]; 
+        Fighter[][] pairs = new Fighter[objects.length / 2][2];
         int maxObject = objects.length;
         int index = 0;
         while (maxObject > 2) {
@@ -25,8 +25,9 @@ public class PairGenerator {
             }
             index ++;
         }
-        pairs[maxObject][0] = objects[0];
-        pairs[maxObject][1] = objects[1];
+        pairs[pairs.length - 1][0] = objects[0];
+        pairs[pairs.length - 1][1] = objects[1];
+       
         return pairs;
     }
 }

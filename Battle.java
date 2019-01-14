@@ -20,16 +20,32 @@ public class Battle {
             System.out.print(pair[1].getName());
             System.out.println(pair[1].getHealth());
             if (pair[1].isDead()) {
+                System.out.println("****************************************");
+                System.out.println(pair[0].getName() + " has won!");
+                System.out.println("****************************************");
                 return pair[0];
             } else if (pair[0].isDead()){
+                System.out.println("****************************************");
+                System.out.println(pair[1].getName() + " has won!");
+                System.out.println("****************************************");
                 return pair[1];
             }
         }
         
     }
-    public void runTournament(Fighter[] fighter) {
-        pairGen = new PairGenerator();
-        
+    public void runRound(Fighter[] fighters) {
+        PairGenerator pairGen = new PairGenerator();
+        Fighter[][] pairs = pairGen.makePair(fighters);
+        Fighter[] winners = new Fighter[fighters.length / 2];
+        int i = 0;
+        for (Fighter[] pair : pairs) {
+            winners[i] = this.runFight(pair[0], pair[1]);
+            i++;
+        }
+        for (Fighter f : winners) {
+            System.out.println(f.getName());
+        }
+     
     }
     private Fighter[] rollForInitiative(Fighter fighter1, Fighter fighter2) {
         /**
