@@ -8,11 +8,27 @@ public class Fighter {
     private int defense;
     private int attack; 
 
-    public Fighter(String name, int health, int defense, int attack){
+    public Fighter(String name, int health, int defense, int attack) {
+        this.name = name;
+        this. health = health;
+        this. defense = defense;
+        this.attack = attack;
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
+    }
+
+    public int getHealth() {
+        return this.health;
+    }
+    
+    public int getDefense() {
+        return this.defense;
+    }
+
+    public int getattack() {
+        return this.attack;
     }
 
     public boolean isDead(){
