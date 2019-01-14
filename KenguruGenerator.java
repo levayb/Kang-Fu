@@ -1,7 +1,0 @@
-/**
- * KenguruGenerator
- */
-public class KenguruGenerator {
-
-    
-}
