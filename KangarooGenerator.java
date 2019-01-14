@@ -31,14 +31,11 @@ public class KangarooGenerator {
     }public Kangaroo[] createKangaroos(int num){
         Kangaroo[] kangaroos = new Kangaroo[num];
         for (int i = 0; i < num; i++) {
-<<<<<<< HEAD
             if (this.createKangaroo()) {
                 
             }
             kangaroos[i] = this.createKangaroo(); 
-=======
             kangaroos[i] = this.createKangaroo();
->>>>>>> 81e1fa62c648a7ef2a81bdf48ac32c716e35d844
         }
         return kangaroos;
     }
