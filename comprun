@@ -1,0 +1,7 @@
+#!/bin/bash
+# This file compiles and runs the program
+
+# Compile
+javac Main.java -d target/
+# Run
+java -cp target/ Main
