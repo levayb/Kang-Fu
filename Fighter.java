@@ -5,13 +5,13 @@ public class Fighter {
 
     protected String name;
     protected int health; 
-    protected int defense;
+    protected int damageReduction;
     protected int attack; 
 
-    public Fighter(String name, int health, int defense, int attack) {
+    public Fighter(String name, int health, int damageReduction, int attack) {
         this.name = name;
         this.health = health;
-        this.defense = defense;
+        this.damageReduction = damageReduction;
         this.attack = attack;
     }
 
@@ -23,8 +23,8 @@ public class Fighter {
         return this.health;
     }
     
-    public int getDefense() {
-        return this.defense;
+    public int getdamageReduction() {
+        return this.damageReduction;
     }
 
     public int getattack() {
@@ -40,8 +40,12 @@ public class Fighter {
     }
 
     public attack(Fighter enemy) {
-        
     }
 
+    public sufferDamage(int damage){
+        if(this.damageReduction < damage) {
+            this.health = damage - this.damageReduction;
+        }
+    }
 
 }
