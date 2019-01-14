@@ -12,6 +12,7 @@ public class Main {
     public static void test() {
         // Tester block
         /*
+        // Tester blocka
         Battle battle = new Battle();
         System.out.println("Test print");
         Fighter f1 = new Fighter("Józsi", 200, 10, 10);
