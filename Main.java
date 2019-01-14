@@ -32,10 +32,12 @@ public class Main {
         */
 
         // Testing sets
-        Set<String> names = new HashSet<>();
-        names.add("Mary");
-        names.add("Tom");
-        names.remove("Mary");
-        System.out.println(names.toArray()[0]);
+        Set<Fighter> fighters = new HashSet<Fighter>();
+        Fighter f1 = new Fighter("SSSSSSSSSSSSSSS", 100, 100, 100);
+        Fighter f2 = new Fighter("sadfsdafsdafsa", 100, 100, 100);
+        fighters.add(f1);
+        fighters.add(f2);
+        Fighter f = (Fighter)fighters.toArray()[0];
+        System.out.println(f.getName());
     }
 }
