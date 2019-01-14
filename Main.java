@@ -1,3 +1,6 @@
+import java.util.*;
+
+
 /**
  * Main
  */
@@ -8,6 +11,7 @@ public class Main {
     }
     public static void test() {
         // Tester block
+        /*
         Battle battle = new Battle();
         System.out.println("Test print");
         Fighter f1 = new Fighter("Józsi", 200, 10, 10);
@@ -24,5 +28,13 @@ public class Main {
                                       {"dfsdf", "sdfasd", "sdgsdgasfs"}
                                       };
         p.printTable(s, "lll");
+        */
+
+        // Testing sets
+        Set<String> names = new HashSet<>();
+        names.add("Mary");
+        names.add("Tom");
+        names.remove("Mary");
+        System.out.println(names.toArray()[0]);
     }
 }
