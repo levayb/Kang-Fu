@@ -42,11 +42,21 @@ public class Main {
                                             new Fighter("Anyád", 1, 1, 1),
                                             new Fighter("Tarzan", 1, 1, 1),
                                             new Fighter("Róóóóland", 1, 1, 1),
-                                            new Fighter("Körszakáll", 1, 1, 1)
+                                            new Fighter("Körszakáll", 1, 1, 1),
                                             };
 
         PairGenerator p = new PairGenerator();
-        p.makePair(fighters);
+        try {
+            Fighter[][] pairs = p.makePair(fighters);
+            for (Fighter[] pair : pairs) {
+                System.out.print(pair[0].getName() + " ");
+                System.out.println(pair[1].getName());
+            }
+            
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+
+        }
 
 
     }
