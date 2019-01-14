@@ -39,10 +39,10 @@ public class Fighter {
         }
     }
 
-    public attack(Fighter enemy) {
+    public void attack(Fighter enemy) {
     }
 
-    public sufferDamage(int damage){
+    public void sufferDamage(int damage){
         if(this.damageReduction < damage) {
             this.health = damage - this.damageReduction;
         }
