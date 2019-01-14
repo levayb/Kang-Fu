@@ -10,8 +10,8 @@ public class Fighter {
 
     public Fighter(String name, int health, int defense, int attack) {
         this.name = name;
-        this. health = health;
-        this. defense = defense;
+        this.health = health;
+        this.defense = defense;
         this.attack = attack;
     }
 
