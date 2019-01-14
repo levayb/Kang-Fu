@@ -1,5 +1,3 @@
-import com.sun.beans.introspect.PropertyInfo.Name;
-
 /**
  * Fighter
  */
@@ -12,4 +10,6 @@ public class Fighter {
 
     public Fighter(String name, int health, int defense, int attack){
     }
+
+
 }
