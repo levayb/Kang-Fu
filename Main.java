@@ -32,33 +32,13 @@ public class Main {
         */
 
         // Testing sets
+        Battle battle = new Battle();
+        KangarooGenerator k = new KangarooGenerator();
+        Fighter[] kangaroos = k.createKangaroos(10);
         
-
-
-        Fighter f1 = new Fighter("SSSSSSSSSSSSSSS", 100, 100, 100);
-        Fighter f2 = new Fighter("sadfsdafsdafsa", 100, 100, 100);
-        Fighter[] fighters = new Fighter[] {new Kangaroo("Jack", 1, 1, 1),
-                                            new Kangaroo("Jane", 1, 1, 1),
-                                            new Kangaroo("Anyád", 1, 1, 1),
-                                            new Kangaroo("Tarzan", 1, 1, 1),
-                                            new Kangaroo("Róóóóland", 1, 1, 1),
-                                            new Kangaroo("Körszakáll", 1, 1, 1),
-                                            };
-        Kangaroo sdfsdf = (Kangaroo)fighters[0];
-        sdfsdf.tailStike();
-        PairGenerator p = new PairGenerator();
-        try {
-            Fighter[][] pairs = p.makePair(fighters);
-            for (Fighter[] pair : pairs) {
-                System.out.print(pair[0].getName() + " ");
-                System.out.println(pair[1].getName());
-            }
-            
-        } catch (IllegalArgumentException e) {
-            System.out.println(e);
-
-        }
-
+        battle.runRound(kangaroos);
+        // System.out.println(kangaroos[10].getName());
+        // battle.runRound(kangaroos);
 
     }
 }

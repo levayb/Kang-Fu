@@ -27,9 +27,13 @@ public class Battle {
         }
         
     }
-    public void runTournament(Fighter[] fighter) {
-        pairGen = new PairGenerator();
-        
+    public void runRound(Fighter[] fighters) {
+        PairGenerator pairGen = new PairGenerator();
+        Fighter[][] pairs = pairGen.makePair(fighters);
+        for (Fighter[] pair : pairs) {
+            System.out.print(pair[0].getName());
+            System.out.println(pair[1].getName());
+        }
     }
     private Fighter[] rollForInitiative(Fighter fighter1, Fighter fighter2) {
         /**

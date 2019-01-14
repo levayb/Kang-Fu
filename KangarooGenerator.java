@@ -8,7 +8,9 @@ public class KangarooGenerator {
     public Kangaroo createKangaroo(){
         String[] names = {"Killer", "Józsi", "Joe", "Gizi", "Pakkó", "Robertó", "Chuck Norris", 
                             "Jimmi", "Oszkár", "Skippy", "Immre a pusztító", "Chicitó", 
-                            "Consuela", "Róóóóland", "Anyád", "Lajkó", "Körszakáll", "Tarzan"};
+                            "Consuela", "Róóóóland", "Anyád", "Lajkó", "Körszakáll", "Tarzan",
+                            "Jenő", "Werner", "Piroska", "Nagyanyád", "Jácint", "Jefferson", "Nyenyere",
+                            "Tesco", "Java", "Kökörcsin", "Pára", "Nyúl", "Én", "Kurbli"};
                             
         int rnd = new Random().nextInt(names.length);
         String name = names[rnd];
@@ -22,7 +24,7 @@ public class KangarooGenerator {
     }public Kangaroo[] createKangaroos(int num){
         Kangaroo[] kangaroos = new Kangaroo[num];
         for (int i = 0; i < num; i++) {
-            kangaroos[i] = this.createKangaroo(); 
+            kangaroos[i] = this.createKangaroo();
         }
         return kangaroos;
     }
