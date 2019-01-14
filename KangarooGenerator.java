@@ -1,0 +1,7 @@
+/**
+ * KangarooGenerator
+ */
+public class KangarooGenerator {
+
+    
+}
