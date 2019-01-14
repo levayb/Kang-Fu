@@ -3,14 +3,14 @@
  */
 public class Fighter {
 
-    private String name;
-    private int health; 
-    private int defense;
-    private int attack; 
+    protected String name;
+    protected int health; 
+    protected int defense;
+    protected int attack; 
 
     public Fighter(String name, int health, int defense, int attack) {
         this.name = name;
-        this.health = health;
+        this. health = health;
         this.defense = defense;
         this.attack = attack;
     }
