@@ -29,7 +29,7 @@ public class Battle {
     }
     private int rollForInitiative(Fighter fighter1, Fighter fighter2) {
         /**
-        Calculates, which fighter starts game. Returns 1 for fighter1 and 2 for fighter 2
+        Calculates which fighter starts game. Returns 1 for fighter1 and 2 for fighter 2
         */
         return 1; // Test return; initiative rules to be worked out
     }
