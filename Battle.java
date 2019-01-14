@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Battle {
     
     Fighter[] fighters = new Fighter[10];
@@ -7,30 +9,33 @@ public class Battle {
         /*
         Runs a complete pair fight until death. Returns winner
         */
-        Fighter fighterA;
-        Fighter fighterB;
-        if (rollForInitiative(fighter1, fighter2) == 1) {
-            fighterA = fighter1;
-            fighterB = fighter2;
-        } else {
-            fighterA = fighter2;
-            fighterB = fighter1;
-        }
+        Fighter[] pair = rollForInitiative(fighter1, fighter2);
         while (true) {
-            fighterA.attack(fighterB);
-            fighterB.attack(fighterA);
-            if (fighterB.isDead()) {
-                return fighterA;
-            } else if (fighterA.isDead()){
-                return fighterB;
+            // Debug
+            pair[0].attack(pair[1]);
+            pair[1].attack(pair[0]);
+            // ********
+            System.out.print(pair[0].getName());
+            System.out.println(pair[0].getHealth());
+            System.out.print(pair[1].getName());
+            System.out.println(pair[1].getHealth());
+            if (pair[1].isDead()) {
+                return pair[0];
+            } else if (pair[0].isDead()){
+                return pair[1];
             }
         }
         
     }
-    private int rollForInitiative(Fighter fighter1, Fighter fighter2) {
+    private Fighter[] rollForInitiative(Fighter fighter1, Fighter fighter2) {
         /**
-        Calculates which fighter starts game. Returns 1 for fighter1 and 2 for fighter 2
+        Calculates which fighter starts game. Returns a pair of fighters in the order of initiative
         */
-        return 1; // Test return; initiative rules to be worked out
+        Random random = new Random();
+        if (random.nextInt(2) == 0) {
+            return new Fighter[] {fighter1, fighter2}; // Test return; initiative rules to be worked out
+        } else {
+            return new Fighter[] {fighter2, fighter1}; // Test return; initiative rules to be worked out
+        }
     }
 }

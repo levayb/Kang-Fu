@@ -32,14 +32,15 @@ public class Fighter {
     }
 
     public boolean isDead() {
-        if(this.health <= 0){
+        if (this.health <= 0){
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
     public void attack(Fighter enemy) {
+        enemy.health -= this.attack;
     }
 
     public void sufferDamage(int damage){
