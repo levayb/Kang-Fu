@@ -39,5 +39,9 @@ public class Fighter {
         }
     }
 
+    public attack(Fighter enemy) {
+        
+    }
+
 
 }
