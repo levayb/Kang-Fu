@@ -41,9 +41,9 @@ public class Main {
         // System.out.println(kangaroos[10].getName());
         // battle.runRound(kangaroos);
         //idáig törölni
-        Menu menu = new Menu();
+        // Menu menu = new Menu();
                                      
-        
+        Logger l = new Logger();
         Battle battle = new Battle();
         KangarooGenerator k = new KangarooGenerator();
         Fighter[] kangaroos = k.createKangaroos(10);
