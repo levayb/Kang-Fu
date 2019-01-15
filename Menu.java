@@ -6,21 +6,23 @@ import java.util.Scanner;
 public class Menu {
 
     private int choice;
-    private String header = " Menu options:";
-    private String[] menuOptions = {"Figth", "Make kangoroos", "Loading kangoroos from file", "Exit"};
+    private String[] menuOptions = {"Figth", "Make kangoroos", "Loading kangoroos from file", "Statistics", "Result", "Exit"};
     private String decorator;
 
     public Menu(){
 
         do {
-            System.out.println(header);
+            Logger.messageDekor("Menu options:");
+            // System.out.println(header);
             decorator(menuOptions);
             for (String option : menuOptions) {
-                System.out.println("  " + option);
+                Logger.sysOutStringData("  " + option);
+                // System.out.println("  " + option);
                 
             }
             Scanner sc = new Scanner(System.in);
-            System.out.print("Enter \"1\", \"2\", \"3\" or \"4\": ");
+            Logger.sysOutStringData("Enter \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\": ");
+            // System.out.print("Enter \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\": ");
             choice = sc.nextInt();
 
             switch (choice)
@@ -37,10 +39,16 @@ public class Menu {
                 case 4: 
                     System.out.println("test option 4");
                     break;
+                case 5: 
+                    System.out.println("test option 5");
+                    break;
+                case 6: 
+                    System.out.println("test option 6");
+                    break;
                 default:
-                    System.out.println("Choice must be a value between 1 and 4.");
+                    System.out.println("Choice must be a value between 1 and 6.");
             }   
-        } while (choice != 4);
+        } while (choice != 6);
     }
     public void decorator(String[] menuOptions){
         int index = 0; 
@@ -53,6 +61,7 @@ public class Menu {
         for (int i = 0; i < menuOptions[index].length(); i++) {
             decorator += "*";
         }
-        System.out.println(decorator);
+        Logger.sysOutStringData(decorator);
+        // System.out.println(decorator);
     }
 }
