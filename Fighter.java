@@ -11,7 +11,6 @@ public class Fighter {
     protected int damage = 10;
     protected static int maxId = 0;
     protected Random rnd = new Random();
-    protected int baseAttackRoll;
 
     public int id;
 
@@ -48,16 +47,21 @@ public class Fighter {
         }
     }
 
-    public void attack(Fighter enemy) {
-        this.baseAttackRoll = rnd.nextInt(100) + this.attack;
+    protected int calculateBaseAttack(Fighter enemy) {
+        int baseAttackRoll = rnd.nextInt(100) + this.attack;
         Logger.log("ATTACK", this.name + " -> " + enemy.getName());
+        return baseAttackRoll;
+    }
+
+    public void attack(Fighter enemy) {
+        // To be overriden as needed
     }
 
     public void sufferAttack(int attackRoll, int damage){
         if (attackRoll > this.defense) {
-            Logger.log("", "Hit, " + Integer.toString(damage) + " damage");
-            Logger.log("",  "has " + Integer.toString(this.health) + " hit points left.");
             this.health -= damage;
+            Logger.log("", "Hit, " + Integer.toString(damage) + " damage");
+            Logger.log("",  this.name + " has " + Integer.toString(this.health) + " hit points left.");
         } else {
             Logger.log("", "Miss");
         }
