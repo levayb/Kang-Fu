@@ -2,9 +2,12 @@
  * Logger
  */
 public class Logger {
-    TablePrinter tablePrinter = new TablePrinter();
+    private TablePrinter tablePrinter = new TablePrinter();
 
-    public Logger(){
-        
+    public Logger() {
+    }
+
+    public  void log(String type, String message) {
+        System.out.print(type.toUpperCase() + ": " + message);
     }
 }
