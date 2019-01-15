@@ -32,6 +32,17 @@ public class Main {
         */
 
         // Testing sets
+
+                // Battle battle = new Battle();
+                // KangarooGenerator k = new KangarooGenerator();
+                // Fighter[] kangaroos = k.createKangaroos(10);
+                
+                // battle.runRound(kangaroos);
+        // System.out.println(kangaroos[10].getName());
+        // battle.runRound(kangaroos);
+        //idáig törölni
+        Menu menu = new Menu();
+                                     
         
         Battle battle = new Battle();
         KangarooGenerator k = new KangarooGenerator();
@@ -40,6 +51,8 @@ public class Main {
         battle.runRound(kangaroos);
         // System.out.println(kangaroos[10].getName());
         //battle.runRound(kangaroos);
-    }
+    } 
+    
+
 
 }
