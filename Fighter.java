@@ -13,7 +13,7 @@ public class Fighter {
     protected static int maxId = 0;
     protected Random rnd = new Random();
 
-    public int id;
+    protected int id;
 
     public Fighter(String name, int health, int damageReduction, int attack) {
         this.name = name;
@@ -63,6 +63,9 @@ public class Fighter {
     }
     public void regenerate() {
         this.health = this.maxHealth;
+    }
+    public getId() {
+        return this.id;
     }
 
 }
