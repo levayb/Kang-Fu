@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Battle {
     
-    int maxFighters = 2;
+    
 
     private Fighter[] rollForInitiative(Fighter fighter1, Fighter fighter2) {
         /**

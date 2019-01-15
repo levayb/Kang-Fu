@@ -11,8 +11,8 @@ public class Main {
     */
     public static void main(String[] args) {
         battleTest();
-        kangarooGeneratorTest();
-        // menuTest();
+        //kangarooGeneratorTest();
+        //menuTest();
     }
 
     /* 
@@ -32,7 +32,7 @@ public class Main {
         KangarooGenerator k = new KangarooGenerator();
     }
     public static void menuTest() {
-        // For menu system testing
+        Menu menu = new Menu();
     }
     
 
