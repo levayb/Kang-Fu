@@ -55,7 +55,8 @@ public class Fighter {
 
     public void sufferAttack(int attackRoll, int damage){
         if (attackRoll > this.defense) {
-            Logger.log("", "Hit");
+            Logger.log("", "Hit, " + Integer.toString(damage) + " damage");
+            Logger.log("",  "has " + Integer.toString(this.health) + " hit points left.");
             this.health -= damage;
         } else {
             Logger.log("", "Miss");
