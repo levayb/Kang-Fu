@@ -6,50 +6,35 @@ import java.util.*;
  */
 public class Main {
 
+    /*
+        Main entry point
+    */
     public static void main(String[] args) {
-        test();
+        battleTest();
+        kangarooGeneratorTest();
+        menuTest();
     }
-    public static void test() {
-        // Tester block
-        /*
-        // Tester blocka
-        Battle battle = new Battle();
-        System.out.println("Test print");
-        Fighter f1 = new Fighter("Józsi", 200, 10, 10);
-        Fighter f2 = new Fighter("Pista", 100, 10, 10);
-        Fighter winner = battle.runFight(f1, f2);
-        System.out.println(winner.getName());
-        
-        TablePrinter p = new TablePrinter();
-        String[][] s = new String[][] {
-                                      {"dfsdf", "sdfsdfasd", "sdgsdgasfs"},
-                                      {"dfsdf", "sdfssd", "sdgsdgasfs"},
-                                      {"dfsdf", "sdfsdfasd", "sdgsdgasfs"},
-                                      {"dfsdf", "sdfsdfasd", "sdgsdgasfs"},
-                                      {"dfsdf", "sdfasd", "sdgsdgasfs"}
-                                      };
-        p.printTable(s, "lll");
-        */
 
-        // Testing sets
-
-                // Battle battle = new Battle();
-                // KangarooGenerator k = new KangarooGenerator();
-                // Fighter[] kangaroos = k.createKangaroos(10);
-                
-                // battle.runRound(kangaroos);
-        // System.out.println(kangaroos[10].getName());
-        // battle.runRound(kangaroos);
-        //idáig törölni
-        Menu menu = new Menu();
+    /* 
+        Seperate testing methods to test individual functionalities
+        Feel free to create new test methods for your testing needs
+        and call them in main() 
+    */
+    public static void battleTest() {
+        // For testing the battle system
                                     
         Battle battle = new Battle();
         KangarooGenerator k = new KangarooGenerator();
-        Fighter[] kangaroos = k.createKangaroos(10);
+        Fighter[] kangaroos = k.createKangaroos(32);
         battle.runRound(kangaroos);
-        // System.out.println(kangaroos[10].getName());
-        //battle.runRound(kangaroos);
     } 
+    public static void kangarooGeneratorTest() {
+        // For testing Kangaroo generation
+        KangarooGenerator k = new KangarooGenerator();
+    }
+    public static void menuTest() {
+        // For menu system testing
+    }
     
 
 
