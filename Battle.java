@@ -22,7 +22,7 @@ public class Battle {
         */
         Fighter[] pair = rollForInitiative(fighter1, fighter2);
         // Show contestants
-        Logger.messageDekor("CONTESTANTS");
+        Logger.messageDekor("FIGHT CONTESTANTS");
         pair[0].displayData();
         pair[1].displayData();
         Logger.dekor();
@@ -46,10 +46,13 @@ public class Battle {
     }
     public Fighter[] runRound(Fighter[] fighters) {
         // Init, regenerate and display
+        Logger.dekor();
+        Logger.dekor();
+        Logger.dekor();
         Logger.messageDekor("ROUND CONTESTANTS");
         for (Fighter fighter : fighters) {
             fighter.regenerate();
-            
+            fighter.displayData();
         }
         PairGenerator pairGen = new PairGenerator();
         Fighter[][] pairs = pairGen.makePair(fighters);
@@ -60,6 +63,7 @@ public class Battle {
             i++;
         }
         // Display winners
+        Logger.messageDekor("Round Winners");
         for (Fighter f : winners) {
             // System.out.println(f.getName());
             f.displayData();
