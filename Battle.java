@@ -11,12 +11,18 @@ public class Battle {
         */
         Fighter[] pair = rollForInitiative(fighter1, fighter2);
         
-        System.out.println("******************CONTESTANTS*****************");
-        System.out.print(pair[0].getName());
-        System.out.println(pair[0].getHealth());
-        System.out.print(pair[1].getName());
-        System.out.println(pair[1].getHealth());
-        System.out.println("****************************************");
+        Logger.messageDekor("CONTESTANTS");
+        // System.out.println("******************CONTESTANTS*****************");
+        Logger.sysOutStringData(pair[0].getName());
+        // System.out.print(pair[0].getName());
+        Logger.sysOutintData(pair[0].getHealth());
+        // System.out.println(pair[0].getHealth());
+        Logger.sysOutStringData(pair[1].getName());
+        // System.out.print(pair[1].getName());
+        Logger.sysOutintData(pair[1].getHealth());
+        // System.out.println(pair[1].getHealth());
+        Logger.dekor();
+        // System.out.println("****************************************");
         while (true) {
             // Debug
             pair[0].attack(pair[1]);
