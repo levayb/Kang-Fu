@@ -7,7 +7,7 @@ public class Menu {
 
     private int choice;
     private String header = " Menu options:";
-    private String[] menu = {"Option 1", "Option 2", "Option 3", "Option 4"};
+    private String[] menu = {"Figth", "Make kangoroos", "Loading kangoroos from file", "Exit"};
     private String decorator = "-----------";
 
     public Menu(){
