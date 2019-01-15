@@ -10,10 +10,10 @@ public class Fighter {
     protected int attack;
     protected int defense = 50;
     protected int damage = 10;
-    protected static int maxId = 0;
     protected Random rnd = new Random();
-
-    protected int id;
+    
+    protected static int maxId = 0;
+    private int id;
 
     public Fighter(String name, int health, int damageReduction, int attack) {
         this.name = name;
@@ -64,8 +64,10 @@ public class Fighter {
     public void regenerate() {
         this.health = this.maxHealth;
     }
-    public getId() {
+    public int getId() {
         return this.id;
     }
-
+    public void displayData() {
+        Logger.sysOutStringData("Id" + Integer.toString(this.id)  + " " + this.name + " " + Integer.toString(this.health));
+    }
 }
