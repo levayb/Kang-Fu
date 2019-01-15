@@ -28,10 +28,6 @@ public class Battle {
             pair[0].attack(pair[1]);
             pair[1].attack(pair[0]);
             // ********
-            System.out.print(pair[0].getName());
-            System.out.println(pair[0].getHealth());
-            System.out.print(pair[1].getName());
-            System.out.println(pair[1].getHealth());
             if (pair[1].isDead()) {
                 System.out.println("*****************VICTORY******************");
                 System.out.println(pair[0].getName() + " has won!");
