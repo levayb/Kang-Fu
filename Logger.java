@@ -3,6 +3,7 @@
  */
 public class Logger {
     private static TablePrinter tablePrinter = new TablePrinter();
+    private static Menu menu = new Menu();
 
     public Logger() {
     }
