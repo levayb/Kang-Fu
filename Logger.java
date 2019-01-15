@@ -26,11 +26,13 @@ public class Logger {
 
     public static void messageDekor(String msg) {
         int sMax = 30;
-        String sChar = "*";
+        String sChar = "";
+        String star = "";
         int sPart = sMax - msg.length();
         for (int i = 0; i < sPart; i++) {
-            System.out.print(sChar + msg + sChar);
+            star += "*";
         }
+        System.out.print(star + msg + star);
     }
 
     public static void dekor() {
