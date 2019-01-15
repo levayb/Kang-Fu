@@ -39,7 +39,7 @@ public class Main {
         
         battle.runRound(kangaroos);
         // System.out.println(kangaroos[10].getName());
-        battle.runRound(kangaroos);
-        
+        //battle.runRound(kangaroos);
     }
+
 }

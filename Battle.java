@@ -10,6 +10,7 @@ public class Battle {
         Runs a complete pair fight until death. Returns winner
         */
         Fighter[] pair = rollForInitiative(fighter1, fighter2);
+        
         System.out.println("******************CONTESTANTS*****************");
         System.out.print(pair[0].getName());
         System.out.println(pair[0].getHealth());
