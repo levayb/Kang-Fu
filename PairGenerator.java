@@ -30,7 +30,11 @@ public class PairGenerator {
 
         for (Fighter[] pair : pairs) {
             for (Fighter fighter : pair) {
-                System.out.println(fighter.id);
+                try {
+                    System.out.println(fighter.id);
+                } catch (NullPointerException e) {
+                    System.out.println("x");
+                }
             }
         }
        

@@ -1,13 +1,15 @@
-/**
- * Fighter
- */
+import java.util.Random;
+
+
 public class Fighter {
 
     protected String name;
     protected int health; 
     protected int damageReduction;
     protected int attack;
+    protected int damage = 10;
     protected static int maxId = 0;
+    protected Random roll = new Random();
     public int id;
 
     public Fighter(String name, int health, int damageReduction, int attack) {
@@ -44,7 +46,8 @@ public class Fighter {
     }
 
     public void attack(Fighter enemy) {
-        enemy.health -= this.attack;
+        int attackRoll = roll.nextInt(100);
+        enemy.health -= this.damage;
     }
 
     public void sufferDamage(int damage){
