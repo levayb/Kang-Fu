@@ -7,19 +7,10 @@ public class Menu {
 
     private int choice;
     private String[] menuOptions = {"Figth", "Make kangoroos", "Loading kangoroos from file", "Statistics", "Result", "Exit"};
-    private String decorator;
 
     public Menu(){
 
         do {
-            Logger.messageDekor("Menu options:");
-            // System.out.println(header);
-            decorator(menuOptions);
-            for (String option : menuOptions) {
-                Logger.sysOutStringData("  " + option);
-                // System.out.println("  " + option);
-                
-            }
             Scanner sc = new Scanner(System.in);
             Logger.sysOutStringData("Enter \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\": ");
             // System.out.print("Enter \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\": ");
@@ -50,18 +41,5 @@ public class Menu {
             }   
         } while (choice != 6);
     }
-    public void decorator(String[] menuOptions){
-        int index = 0; 
-        int elementLength = menuOptions[0].length();
-        for(int i=1; i< menuOptions.length; i++) {
-            if(menuOptions[i].length() > elementLength) {
-                index = i; elementLength = menuOptions[i].length();
-            }
-        }
-        for (int i = 0; i < menuOptions[index].length(); i++) {
-            decorator += "*";
-        }
-        Logger.sysOutStringData(decorator);
-        // System.out.println(decorator);
-    }
+   
 }
