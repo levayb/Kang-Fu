@@ -6,13 +6,17 @@ public class Fighter {
     protected String name;
     protected int health; 
     protected int damageReduction;
-    protected int attack; 
+    protected int attack;
+    protected static int maxId = 0;
+    public int id;
 
     public Fighter(String name, int health, int damageReduction, int attack) {
         this.name = name;
         this.health = health;
         this.damageReduction = damageReduction;
         this.attack = attack;
+        this.id = maxId;
+        maxId ++;
     }
 
     public String getName() {

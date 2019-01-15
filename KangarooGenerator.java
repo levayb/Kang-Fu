@@ -15,9 +15,7 @@ public class KangarooGenerator {
 
         boolean[] used = new boolean[names.length];
         int rnd = new Random().nextInt(names.length);
-        while (!used[rnd]){
-            rnd = new Random().nextInt(names.length);
-        }
+        
         used[rnd] = true;
         String name = names[rnd];
 
@@ -31,10 +29,6 @@ public class KangarooGenerator {
     }public Kangaroo[] createKangaroos(int num){
         Kangaroo[] kangaroos = new Kangaroo[num];
         for (int i = 0; i < num; i++) {
-            if (this.createKangaroo()) {
-                
-            }
-            kangaroos[i] = this.createKangaroo(); 
             kangaroos[i] = this.createKangaroo();
         }
         return kangaroos;
