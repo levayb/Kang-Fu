@@ -3,14 +3,13 @@
  */
 public class Kangaroo extends Fighter {
 
-    private int specialAttack;
 
     public Kangaroo(String name, int health, int damageReduction, int attack){
-        
         super(name, health, damageReduction, attack);
+        
     }
     public int bigKick(){
-        specialAttack = super.attack + 20;
+        int specialAttack = super.attack + 20;
         if (super.damageReduction - 10 > 0) {
             super.damageReduction -= 10;
         }
@@ -18,7 +17,7 @@ public class Kangaroo extends Fighter {
     }
 
     public int tailStike(){
-        specialAttack = super.attack + 40;
+        int specialAttack = super.attack + 40;
         if (super.damageReduction - 10 > 0) {
             super.damageReduction -= 10;
         }
@@ -26,7 +25,7 @@ public class Kangaroo extends Fighter {
     }
 
     public int incrediblePunch(){
-        specialAttack = super.attack + 50;
+        int specialAttack = super.attack + 50;
         if (super.damageReduction - 10 > 0) {
             super.damageReduction -= 10;
         }
@@ -34,5 +33,8 @@ public class Kangaroo extends Fighter {
     }
     public void attack(Fighter enemy) {
         super.attack(enemy);
+        int attackRoll = super.baseAttackRoll;
+        int damage = super.damage;
+        enemy.sufferAttack(attackRoll, damage);
     }
 }

@@ -7,9 +7,12 @@ public class Fighter {
     protected int health; 
     protected int damageReduction;
     protected int attack;
+    protected int defense = 50;
     protected int damage = 10;
     protected static int maxId = 0;
-    protected Random roll = new Random();
+    protected Random rnd = new Random();
+    protected int baseAttackRoll;
+
     public int id;
 
     public Fighter(String name, int health, int damageReduction, int attack) {
@@ -46,14 +49,18 @@ public class Fighter {
     }
 
     public void attack(Fighter enemy) {
-        int attackRoll = roll.nextInt(100);
-        enemy.health -= this.damage;
+        this.baseAttackRoll = rnd.nextInt(100) + this.attack;
+        Logger.log("ATTACK", this.name + " -> " + enemy.getName());
     }
 
-    public void sufferDamage(int damage){
-        if(this.damageReduction < damage) {
-            this.health = damage - this.damageReduction;
+    public void sufferAttack(int attackRoll, int damage){
+        if (attackRoll > this.defense) {
+            Logger.log("", "Hit");
+            this.health -= damage;
+        } else {
+            Logger.log("", "Miss");
         }
+
     }
 
 }

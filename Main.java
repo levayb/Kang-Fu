@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         battleTest();
         kangarooGeneratorTest();
-        menuTest();
+        // menuTest();
     }
 
     /* 
@@ -21,8 +21,7 @@ public class Main {
         and call them in main() 
     */
     public static void battleTest() {
-        // For testing the battle system
-                                    
+        // For testing the battle system       
         Battle battle = new Battle();
         KangarooGenerator k = new KangarooGenerator();
         Fighter[] kangaroos = k.createKangaroos(32);
