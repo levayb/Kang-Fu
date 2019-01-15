@@ -19,4 +19,25 @@ public class Logger {
     public static void sysOutintData(int data) {
         System.out.println(data);
     }
+
+    public static void winMsg(String name) {
+        System.out.println(name + " has won!");
+    }
+
+    public static void messageDekor(String msg) {
+        int sMax = 30;
+        String sChar = "*";
+        int sPart = sMax - msg.length();
+        for (int i = 0; i < sPart; i++) {
+            System.out.print(sChar + msg + sChar);
+        }
+    }
+
+    public static void dekor() {
+        int sMax = 30;
+        String sChar = "*";
+        for (int i = 0; i < sMax; i++) {
+            System.out.print(sChar);
+        }
+    }
 }
