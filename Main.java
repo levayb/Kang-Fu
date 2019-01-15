@@ -24,8 +24,8 @@ public class Main {
         // For testing the battle system       
         Battle battle = new Battle();
         KangarooGenerator k = new KangarooGenerator();
-        Fighter[] kangaroos = k.createKangaroos(4);
-        battle.runRound(kangaroos);
+        Fighter[] kangaroos = k.createKangaroos(8);
+        battle.runTournament(kangaroos);
     } 
     public static void kangarooGeneratorTest() {
         // For testing Kangaroo generation

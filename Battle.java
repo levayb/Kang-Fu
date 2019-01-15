@@ -70,10 +70,13 @@ public class Battle {
         }
         return winners;
     }
-    public void runTournament(Fighter[] contestants) {
+    public Fighter runTournament(Fighter[] contestants) {
+        Logger.messageDekor("TOURNAMENT");
         while(contestants.length > 1) {
             contestants = this.runRound(contestants);
         }
+        Fighter tournamentWinner = contestants[0];
         
+        return tournamentWinner;
     }
 }
