@@ -11,32 +11,38 @@ public class Battle {
         */
         Fighter[] pair = rollForInitiative(fighter1, fighter2);
         
-        Logger.messageDekor("CONTESTANTS");
         // System.out.println("******************CONTESTANTS*****************");
-        Logger.sysOutStringData(pair[0].getName());
         // System.out.print(pair[0].getName());
-        Logger.sysOutintData(pair[0].getHealth());
         // System.out.println(pair[0].getHealth());
-        Logger.sysOutStringData(pair[1].getName());
         // System.out.print(pair[1].getName());
-        Logger.sysOutintData(pair[1].getHealth());
         // System.out.println(pair[1].getHealth());
-        Logger.dekor();
         // System.out.println("****************************************");
+        Logger.messageDekor("CONTESTANTS");
+        Logger.sysOutStringData(pair[0].getName());
+        Logger.sysOutintData(pair[0].getHealth());
+        Logger.sysOutStringData(pair[1].getName());
+        Logger.sysOutintData(pair[1].getHealth());
+        Logger.dekor();
         while (true) {
             // Debug
             pair[0].attack(pair[1]);
             pair[1].attack(pair[0]);
             // ********
             if (pair[1].isDead()) {
-                System.out.println("*****************VICTORY******************");
-                System.out.println(pair[0].getName() + " has won!");
-                System.out.println("****************************************");
+                Logger.messageDekor("VICTORY");
+                Logger.winMsg(pair[0].getName());
+                Logger.dekor();
+                // System.out.println("*****************VICTORY******************");
+                // System.out.println(pair[0].getName() + " has won!");
+                // System.out.println("****************************************");
                 return pair[0];
             } else if (pair[0].isDead()){
-                System.out.println("*****************VICTORY******************");
-                System.out.println(pair[1].getName() + " has won!");
-                System.out.println("****************************************");
+                Logger.messageDekor("VICTORY");
+                Logger.winMsg(pair[1].getName());
+                Logger.dekor();
+                // System.out.println("*****************VICTORY******************");
+                // System.out.println(pair[1].getName() + " has won!");
+                // System.out.println("****************************************");
                 return pair[1];
             }
         }
@@ -52,7 +58,8 @@ public class Battle {
             i++;
         }
         for (Fighter f : winners) {
-            System.out.println(f.getName());
+            // System.out.println(f.getName());
+            Logger.sysOutStringData(f.getName());
         }
      
     }

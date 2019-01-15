@@ -25,20 +25,20 @@ public class Logger {
 
     public static void messageDekor(String msg) {
         int sMax = 30;
-        String sChar = "";
         String star = "";
         int sPart = sMax - msg.length();
         for (int i = 0; i < sPart; i++) {
             star += "*";
         }
-        System.out.print(star + msg + star);
+        System.out.println(star + msg + star);
     }
 
     public static void dekor() {
         int sMax = 30;
-        String sChar = "*";
+        String star = "";
         for (int i = 0; i < sMax; i++) {
-            System.out.print(sChar);
+            star += "*";
         }
+        System.out.println(star);
     }
 }
