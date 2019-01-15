@@ -15,18 +15,24 @@ public class PairGenerator {
         Random random = new Random();
         Fighter[][] pairs = new Fighter[objects.length / 2][2];
         int maxObject = objects.length;
-        int index = 0;
+        int i = 0;
         while (maxObject > 2) {
-            for (int i = 0; i < 2; i++) {
+            for (int pairMember = 0; pairMember < 2; pairMember++) {
                 int choice = random.nextInt(maxObject);
-                pairs[index][i] = objects[choice];
-                objects[choice] = objects[maxObject-1]; 
-                maxObject -= 1; 
+                pairs[i][pairMember] = objects[choice];
+                objects[choice] = objects[maxObject-1];
+                maxObject -= 1;
             }
-            index ++;
+            i ++;
         }
         pairs[pairs.length - 1][0] = objects[0];
         pairs[pairs.length - 1][1] = objects[1];
+
+        for (Fighter[] pair : pairs) {
+            for (Fighter fighter : pair) {
+                System.out.println(fighter.id);
+            }
+        }
        
         return pairs;
     }
