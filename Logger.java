@@ -24,9 +24,9 @@ public class Logger {
     }
 
     public static void messageDekor(String msg) {
-        int sMax = 30;
+        int sMax = 40;
         String star = "";
-        int sPart = sMax - msg.length();
+        int sPart = (sMax - msg.length()) / 2;
         for (int i = 0; i < sPart; i++) {
             star += "*";
         }
@@ -34,7 +34,7 @@ public class Logger {
     }
 
     public static void dekor() {
-        int sMax = 30;
+        int sMax = 39;
         String star = "";
         for (int i = 0; i < sMax; i++) {
             star += "*";
