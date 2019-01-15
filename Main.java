@@ -32,6 +32,7 @@ public class Main {
         */
 
         // Testing sets
+<<<<<<< HEAD
                 // Battle battle = new Battle();
                 // KangarooGenerator k = new KangarooGenerator();
                 // Fighter[] kangaroos = k.createKangaroos(10);
@@ -43,4 +44,16 @@ public class Main {
         Menu menu = new Menu();
                                      
     } 
+=======
+        
+        Battle battle = new Battle();
+        KangarooGenerator k = new KangarooGenerator();
+        Fighter[] kangaroos = k.createKangaroos(10);
+        
+        battle.runRound(kangaroos);
+        // System.out.println(kangaroos[10].getName());
+        battle.runRound(kangaroos);
+        
+    }
+>>>>>>> 55048955adbb2184f6e4aa0cb321ca8d48810d53
 }

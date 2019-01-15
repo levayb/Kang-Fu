@@ -15,9 +15,7 @@ public class KangarooGenerator {
 
         boolean[] used = new boolean[names.length];
         int rnd = new Random().nextInt(names.length);
-        while (!used[rnd]){
-            rnd = new Random().nextInt(names.length);
-        }
+        
         used[rnd] = true;
         String name = names[rnd];
 
