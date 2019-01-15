@@ -7,15 +7,15 @@ public class Menu {
 
     private int choice;
     private String header = " Menu options:";
-    private String[] menu = {"Figth", "Make kangoroos", "Loading kangoroos from file", "Exit"};
-    private String decorator = "-----------";
+    private String[] menuOptions = {"Figth", "Make kangoroos", "Loading kangoroos from file", "Exit"};
+    private String decorator;
 
     public Menu(){
 
         do {
             System.out.println(header);
-            System.out.println(decorator);
-            for (String option : menu) {
+            decorator(menuOptions);
+            for (String option : menuOptions) {
                 System.out.println("  " + option);
                 
             }
@@ -41,5 +41,18 @@ public class Menu {
                     System.out.println("Choice must be a value between 1 and 4.");
             }   
         } while (choice != 4);
-    } //heló
+    }
+    public void decorator(String[] menuOptions){
+        int index = 0; 
+        int elementLength = menuOptions[0].length();
+        for(int i=1; i< menuOptions.length; i++) {
+            if(menuOptions[i].length() > elementLength) {
+                index = i; elementLength = menuOptions[i].length();
+            }
+        }
+        for (int i = 0; i < menuOptions[index].length(); i++) {
+            decorator += "*";
+        }
+        System.out.println(decorator);
+    }
 }
