@@ -8,7 +8,7 @@ public class Logger {
     }
 
     public static void log(String type, String message) {
-        System.out.println(type.toUpperCase() + ": " + message);
+        System.out.println(type.toUpperCase() + message);
     }
 
     public static void sysOutStringData(String data) {
@@ -24,7 +24,7 @@ public class Logger {
     }
 
     public static void messageDekor(String msg) {
-        int sMax = 40;
+        int sMax = 45;
         String star = "";
         int sPart = (sMax - msg.length()) / 2;
         for (int i = 0; i < sPart; i++) {
@@ -34,7 +34,7 @@ public class Logger {
     }
 
     public static void dekor() {
-        int sMax = 39;
+        int sMax = 45;
         String star = "";
         for (int i = 0; i < sMax; i++) {
             star += "*";
