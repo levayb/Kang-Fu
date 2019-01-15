@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Battle {
     
-    Fighter[] fighters = new Fighter[10];
+    Fighter[] fighters = new Fighter[32];
     int maxFighters = 2;
 
     public Fighter runFight(Fighter fighter1, Fighter fighter2) {
