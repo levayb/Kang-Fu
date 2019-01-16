@@ -28,7 +28,6 @@ public class Battle {
         Logger.messageDekor("FIGHT " + Integer.toString(this.fightNum) + " CONTESTANTS");
         pair[0].displayData();
         pair[1].displayData();
-        Logger.dekor();
 
         // Main fight cycle
         while (true) {
@@ -37,12 +36,10 @@ public class Battle {
             if (pair[1].isDead()) {
                 Logger.messageDekor("VICTORY");
                 Logger.winMsg(pair[0].getName());
-                Logger.dekor();
                 return pair[0];
             } else if (pair[0].isDead()){
                 Logger.messageDekor("VICTORY");
                 Logger.winMsg(pair[1].getName());
-                Logger.dekor();
                 return pair[1];
             }
         }

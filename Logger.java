@@ -39,17 +39,17 @@ public class Logger {
         for (int i = 0; i < sPart; i++) {
             star += "*";
         }
-        System.out.println(star + msg + star);
+        System.out.println("\n" + star + msg + star + "\n");
     }
 
-    public static void dekor() {
-        int sMax = 45;
-        String star = "";
-        for (int i = 0; i < sMax; i++) {
-            star += "*";
-        }
-        System.out.println(star);
-    }
+    // public static void dekor() {
+    //     int sMax = 45;
+    //     String star = "";
+    //     for (int i = 0; i < sMax; i++) {
+    //         star += "*";
+    //     }
+    //     System.out.println("\n" + star);
+    // }
 
     public static void setLogging(boolean battle_logging, boolean round_logging, boolean tournament_logging) {
         battleLogging = battle_logging;
