@@ -12,11 +12,13 @@ public class Main {
     */
     public static void main(String[] args) {
         Logger logger = new Logger();
-        //battleTest(logger);
+        logger.setLogging(true, true, true);
+        logger.setWaitingForUser(false, false, false);
+        battleTest(logger);
         // kangarooGeneratorTest(logger);
         // menuTest(logger);
         // fileTester(logger);
-        testWriteKangaroosToFile();
+        // testWriteKangaroosToFile();
         
     }
 
@@ -27,7 +29,6 @@ public class Main {
     */
     public static void battleTest(Logger logger) {
         // For testing the battle system
-        logger.setLogging(false, true, true);
         Battle battle = new Battle(logger);
         KangarooGenerator k = new KangarooGenerator();
         Fighter[] kangaroos = k.createKangaroos(16);
@@ -60,7 +61,9 @@ public class Main {
     
     }
     public static void testWriteKangaroosToFile(){
-        KangarooGenerator kangarooGenerator = new KangarooGenerator();
-        kangarooGenerator.writeKangaroosToFile(20);
+        FileManager fm = new FileManager();
+        KangarooGenerator kangarooGenerator = new KangarooGenerator(fm);
+        Kangaroo[] kangaroos = kangarooGenerator.createKangaroos(16);
+        kangarooGenerator.writeKangaroosToFile(kangaroos);
     }
 }

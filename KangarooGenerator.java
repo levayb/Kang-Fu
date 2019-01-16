@@ -15,9 +15,9 @@ public class KangarooGenerator {
         this.fileManager = fileManager;
     }
 
-    public Kangaroo createKangaroo(String name, int health, int damageReduction, int attack){
+    public Kangaroo createKangaroo(String name, int health, int damageReduction, int attack, int defense){
         
-        Kangaroo kangaroo = new Kangaroo(name, health, damageReduction, attack);
+        Kangaroo kangaroo = new Kangaroo(name, health, damageReduction, attack, defense);
         return kangaroo;
     }
                         
@@ -40,23 +40,25 @@ public class KangarooGenerator {
             Random rnd = new Random();
             int health = rnd.nextInt((100 - 60) + 1) + 60; 
             int damageReduction = rnd.nextInt((10 - 5) + 1) + 5;
-            int attack = rnd.nextInt((10 - 5) + 1) + 5; 
-            kangaroos[i] = this.createKangaroo(name, health, damageReduction, attack);
+            int attack = rnd.nextInt(40) + 10; 
+            int defense = rnd.nextInt(40) + 60; 
+            kangaroos[i] = this.createKangaroo(name, health, damageReduction, attack, defense);
         }
         return kangaroos;
     }
     public void writeKangaroosToFile(Kangaroo[] kangaroos){
-        String[][] kangarooStats = new String[kangaroos.length][4];
+        String[][] kangarooStats = new String[kangaroos.length][5];
         int index = 0;
         for (Kangaroo kangaroo : kangaroos) {
-            kangarooStats[0][0] = kangaroo.getName();
-            kangarooStats[0][1] = Integer.toString(kangaroo.getHealth());
-            kangarooStats[0][2] = Integer.toString(kangaroo.getdamageReduction());
-            kangarooStats[0][3] = Integer.toString(kangaroo.getattack());
+            kangarooStats[index][0] = kangaroo.getName();
+            kangarooStats[index][1] = Integer.toString(kangaroo.getHealth());
+            kangarooStats[index][2] = Integer.toString(kangaroo.getdamageReduction());
+            kangarooStats[index][3] = Integer.toString(kangaroo.getattack());
+            kangarooStats[index][4] = Integer.toString(kangaroo.getDefense());
             index++;
         }
         try {
-            fileManager.write("kangaroosStats.csv", kangarooStats);
+            fileManager.write("files/kangaroosStats.csv", kangarooStats);
         } catch (IOException e) {
             }
     }

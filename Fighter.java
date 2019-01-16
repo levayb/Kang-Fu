@@ -17,13 +17,14 @@ public class Fighter {
     protected static int maxId = 0;
     private int id;
 
-    public Fighter(String name, int health, int damageReduction, int attack) {
+    public Fighter(String name, int health, int damageReduction, int attack, int defense) {
         this.name = name;
         this.maxHealth = health;
         this.health = this.maxHealth;
         this.damageReduction = damageReduction;
         this.attack = attack;
         this.id = maxId;
+        this.defense = defense;
         maxId ++;
     }
     public String getName() {
@@ -38,6 +39,11 @@ public class Fighter {
     public int getattack() {
         return this.attack;
     }
+
+    public int getDefense() {
+        return this.defense;
+    }
+
     public boolean isDead() {
         if (this.health <= 0){
             return true;
