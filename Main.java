@@ -1,6 +1,3 @@
-import java.util.*;
-
-
 /**
  * Main
  */
@@ -10,9 +7,9 @@ public class Main {
         Main entry point
     */
     public static void main(String[] args) {
-        battleTest();
+        //battleTest();
         //kangarooGeneratorTest();
-        //menuTest();
+        menuTest();
     }
 
     /* 
@@ -33,6 +30,7 @@ public class Main {
     }
     public static void menuTest() {
         Menu menu = new Menu();
+        menu.handleMenu();
     }
     
 
