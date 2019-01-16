@@ -1,3 +1,4 @@
+import java.io.IOException;
 
 /**
  * Menu
@@ -14,7 +15,17 @@ public class Menu extends BaseMenu {
         super.addOption("Exit");
 
     }
-    public void handleMenu(){
+    public void handleMenu() {
+        FileManager fileManager = new FileManager();
+        try {
+            String[] asciArt = fileManager.readTxt("kangaroo.txt");
+            for (String line : asciArt) {
+                System.out.println(line);
+            }
+            
+        } catch (IOException e) {
+        
+        }
         super.showMenu();
 
         switch (super.getInput())
