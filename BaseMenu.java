@@ -49,8 +49,7 @@ public class BaseMenu {
         while (!validInput) {
             try {
                 choice = (Integer.parseInt(sc.nextLine()));
-                // System.out.println(choice);
-                if (choice >= 0 && choice < options.length) {
+                if (choice > 0 && choice <= options.length) {
                     validInput = true;
                 } else {
                     throw new NumberFormatException();
