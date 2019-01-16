@@ -12,7 +12,7 @@ public class Menu {
 
         do {
             Scanner sc = new Scanner(System.in);
-            Logger.sysOutStringData("Enter \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\": ");
+            // super.logger.sysOutStringData("Enter \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\": ");
             // System.out.print("Enter \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\": ");
             choice = sc.nextInt();
 

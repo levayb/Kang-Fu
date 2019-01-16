@@ -31,10 +31,5 @@ public class Kangaroo extends Fighter {
         }
         return specialAttack;
     }
-    public void attack(Fighter enemy) {
-        super.attack(enemy);
-        int attackRoll = super.calculateBaseAttack(enemy);
-        int damage = super.damage;
-        enemy.sufferAttack(attackRoll, damage);
-    }
+
 }

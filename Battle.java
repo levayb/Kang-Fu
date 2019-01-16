@@ -5,6 +5,11 @@ public class Battle {
     private PairGenerator pairGen = new PairGenerator();
     private int fightNum = 0;
     private int roundNum = 0;
+    private Logger logger;
+
+    public Battle(Logger logger) {
+        this.logger = logger;
+    }
 
     private Fighter[] rollForInitiative(Fighter fighter1, Fighter fighter2) {
         /**
@@ -25,21 +30,21 @@ public class Battle {
         */
         Fighter[] pair = rollForInitiative(fighter1, fighter2);
         // Show contestants
-        Logger.messageDekor("FIGHT " + Integer.toString(this.fightNum) + " CONTESTANTS");
-        pair[0].displayData();
-        pair[1].displayData();
+        logger.messageDekor("FIGHT " + Integer.toString(this.fightNum) + " CONTESTANTS");
+        this.logger.messageDekor(pair[0].getDataString());
+        pair[1].getDataString();
 
         // Main fight cycle
         while (true) {
-            pair[0].attack(pair[1]);
-            pair[1].attack(pair[0]);
+            logger.logBattle(pair[0].attack(pair[1]));
+            logger.logBattle(pair[1].attack(pair[0]));
             if (pair[1].isDead()) {
-                Logger.messageDekor("VICTORY");
-                Logger.winMsg(pair[0].getName());
+                logger.messageDekor("VICTORY");
+                logger.winMsg(pair[0].getName());
                 return pair[0];
             } else if (pair[0].isDead()){
-                Logger.messageDekor("VICTORY");
-                Logger.winMsg(pair[1].getName());
+                logger.messageDekor("VICTORY");
+                logger.winMsg(pair[1].getName());
                 return pair[1];
             }
         }
@@ -48,10 +53,10 @@ public class Battle {
         this.roundNum++;
         this.fightNum = 0;
         // Init, regenerate and display
-        Logger.messageDekor("ROUND " + Integer.toString(this.roundNum) + " CONTESTANTS");
+        logger.messageDekor("ROUND " + Integer.toString(this.roundNum) + " CONTESTANTS");
         for (Fighter fighter : fighters) {
             fighter.regenerate();
-            fighter.displayData();
+            this.logger.logRound(fighter.getDataString());
         }
         // Pre-fight init
         Fighter[][] pairs = pairGen.makePair(fighters);
@@ -63,15 +68,15 @@ public class Battle {
             i++;
         }
         // Display winners
-        Logger.messageDekor("Round Winners");
+        logger.messageDekor("Round Winners");
         for (Fighter f : winners) {
             // System.out.println(f.getName());
-            f.displayData();
+            this.logger.messageDekor(f.getDataString());
         }
         return winners;
     }
     public Fighter runTournament(Fighter[] contestants) {
-        Logger.messageDekor("TOURNAMENT");
+        logger.messageDekor("TOURNAMENT");
         while(contestants.length > 1) {
             contestants = this.runRound(contestants);
         }

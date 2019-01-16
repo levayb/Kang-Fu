@@ -21,11 +21,12 @@ public class Main {
         and call them in main() 
     */
     public static void battleTest() {
-        // For testing the battle system       
-        Battle battle = new Battle();
+        // For testing the battle system
+        Logger logger = new Logger();
+        logger.setLogging(true, true, true);
+        Battle battle = new Battle(logger);
         KangarooGenerator k = new KangarooGenerator();
         Fighter[] kangaroos = k.createKangaroos(8);
-        Logger.setLogging(false, true, true);
         battle.runTournament(kangaroos);
         
     } 
