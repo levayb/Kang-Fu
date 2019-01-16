@@ -14,7 +14,7 @@ public class BaseMenu {
 
     protected void showMenu(){
 
-        Logger.messageDekor("Menu options:");
+        logger.messageDekor("Menu options:");
         //decorator(options);
         for (String option : options) {
             logger.sysOutStringData("  " + option);
@@ -48,14 +48,14 @@ public class BaseMenu {
         int choice = 0;
         while (!validInput) {
             try {
-                Logger.sysOutStringData("Enter \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\": ");
+                logger.sysOutStringData("Enter \"1\", \"2\", \"3\Logger logger = new Logger();", \"4\", \"5\" or \"6\": ");
                 choice = (Integer.parseInt(sc.nextLine()));
                 if (choice >= 0 && choice < options.length) {
                     validInput = true;
                 } 
 
             } catch (NumberFormatException e) {
-                Logger.log("Error ", "Enter a valid menu option number!");
+                logger.log("Error ", "Enter a valid menu option number!");
             }
         }
         sc.close();

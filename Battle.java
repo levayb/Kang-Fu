@@ -46,6 +46,7 @@ public class Battle {
                 logger.messageDekor("VICTORY");
                 logger.winMsg(pair[1].getName());
                 return pair[1];
+                
             }
         }
     }

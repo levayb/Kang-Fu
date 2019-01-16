@@ -15,10 +15,10 @@ public class KangarooGenerator {
 
         Kangaroo[] kangaroos = new Kangaroo[number];
 
-        String[] names = {"Killer", "Józsi", "Joe", "Gizi", "Pakkó", "Robertó", "Chuck Norris", 
+        String[] names = {"Killer", "Dzsefferzon", "Joe", "Gizi", "Pakkó", "Robertó", "Chuck Norris", 
                             "Jimmi", "Oszkár", "Skippy", "Immre a pusztító", "Chicitó", 
                             "Consuela", "Róóóóland", "Anyád", "Lajkó", "Körszakáll", "Tarzan",
-                            "Jenő", "Werner", "Piroska", "Nagyanyád", "Jácint", "Jefferson", "Nyenyere",
+                            "Jenő", "Werner", "Piroska", "Nagyanyád", "Jácint", "Józsi", "Nyenyere",
                             "Tesco", "Java", "Kökörcsin", "Pára", "Nyúl", "Én", "Kurbli"};
 
         if (number > names.length) {

@@ -4,7 +4,8 @@
  */
 public class Menu extends BaseMenu {
 
-    public Menu(){
+    public Menu(Logger logger){
+        super(logger);
         super.addOption("Fight");
         super.addOption("Make kangaroos from file");
         super.addOption("Show statistics");
