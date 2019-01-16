@@ -16,7 +16,7 @@ public class Logger {
     public Logger() {
     }
 
-    public static void log(String type, String message) {
+    public void log(String type, String message) {
         System.out.println(type.toUpperCase() + " " + message);
     }
 
