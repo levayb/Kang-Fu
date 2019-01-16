@@ -14,11 +14,34 @@
 
 public class Statistics {
     protected int simCount = 0;
+    protected int winCount = 0;
+    protected int loseCount = 0;
 
     public Statistics(){
     }
 
     public int countSimulations() {
-        return 
+        this.simCount += 1;
+        return simCount;
+    }
+
+    public int countwins() {
+        this.winCount += 1;
+        return winCount;
+    }
+
+    public int countloses() {
+        this.loseCount += 1;
+        return loseCount;
+    }
+
+    public float winnerPercentage() {
+        winStat = this.simCount / this.winCount;
+        return winStat;
+    }
+
+    public float looserPercentage() {
+        loseStat = this.simCount / this.loseCount;
+        return loseStat;
     }
 }
