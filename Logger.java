@@ -4,7 +4,7 @@ import java.util.Scanner;
  * Logger
  */
 public class Logger {
-    private TablePrinter tablePrinter = new TablePrinter();
+    public TablePrinter tablePrinter = new TablePrinter();
     private boolean battleLogging = true;    
     private boolean roundLogging = true;
     private boolean tournamentLogging = true;
