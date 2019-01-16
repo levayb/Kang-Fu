@@ -1,3 +1,4 @@
+import java.io.* ;
 /**
  * HistoricalDatas: Contains the simulation data.
  * 
@@ -15,8 +16,17 @@
  */
 
 public class HistoricalDatas {
-
+    
     public HistoricalDatas(){
         
+    }
+
+    public void fileWriter(String data, String fileName) throws Exception{
+        FlileWriter writeFile = new FileWriter(fileName);
+        BufferedWriter write = new BufferedWriter(writeFile);
+        write.write(data);
+        write.newLine();
+        write.flush();
+        write.close();
     }
 }
