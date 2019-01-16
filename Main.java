@@ -14,8 +14,8 @@ public class Main {
         Logger logger = new Logger();
         // battleTest(logger);
         // kangarooGeneratorTest(logger);
-        // menuTest(logger);
-        fileTester(logger);
+        menuTest(logger);
+        // fileTester(logger);
         
     }
 
@@ -49,7 +49,7 @@ public class Main {
             String[][] s = fileManager.read("files/goat.csv");
            
             logger.tablePrinter.printTable(s);
-            //fileManager.write("files/output", s);
+            fileManager.write("files/output", s);
         } catch (IOException e) {
             System.out.println(e);
         }

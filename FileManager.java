@@ -46,7 +46,19 @@ public class FileManager {
         return outputArray;
     }
 
-    public void write(String filename, String[][] inputArray) throws IOException {
-
+    public String write(String filename, String[][] inputArray) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+        String str = "";
+        for (String[] row : inputArray) {
+            for (String item : row) {
+                str += item + ",";
+            }
+            str = str.substring(0, str.length() - 1);
+            str += "\n";
+        }
+        str = str.substring(0, str.length() - 1);
+        writer.write(str);
+        writer.close();
+        return str;
     }
 }
