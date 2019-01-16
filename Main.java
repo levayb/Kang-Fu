@@ -1,6 +1,3 @@
-import java.util.*;
-
-
 /**
  * Main
  */
@@ -10,9 +7,10 @@ public class Main {
         Main entry point
     */
     public static void main(String[] args) {
-        battleTest();
-        //kangarooGeneratorTest();
-        //menuTest();
+        Logger logger = new Logger();
+        battleTest(logger);
+        kangarooGeneratorTest(logger);
+        menuTest(logger);
     }
 
     /* 
@@ -20,9 +18,8 @@ public class Main {
         Feel free to create new test methods for your testing needs
         and call them in main() 
     */
-    public static void battleTest() {
+    public static void battleTest(Logger logger) {
         // For testing the battle system
-        Logger logger = new Logger();
         logger.setLogging(true, true, true);
         Battle battle = new Battle(logger);
         KangarooGenerator k = new KangarooGenerator();
@@ -30,12 +27,13 @@ public class Main {
         battle.runTournament(kangaroos);
         
     } 
-    public static void kangarooGeneratorTest() {
+    public static void kangarooGeneratorTest(Logger logger) {
         // For testing Kangaroo generation
         KangarooGenerator k = new KangarooGenerator();
     }
-    public static void menuTest() {
-        Menu menu = new Menu();
+    public static void menuTest(Logger logger) {
+        Menu menu = new Menu(logger);
+        menu.handleMenu();
     }
     
 

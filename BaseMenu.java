@@ -1,9 +1,10 @@
+import java.util.Scanner;
 /**
  * BaseMenu
  */
 public class BaseMenu {
 
-    private String[] options = new String[10];
+    private String[] options = new String[6];
     private int maxOptions = 0;
     protected Logger logger;
 
@@ -14,16 +15,17 @@ public class BaseMenu {
     protected void showMenu(){
 
         logger.messageDekor("Menu options:");
-        decorator(options);
+        //decorator(options);
         for (String option : options) {
             logger.sysOutStringData("  " + option);
         }
-        decorator(options);
+        //decorator(options);
 
     }
     protected void addOption(String option){
         options[maxOptions] = option;
         this.maxOptions++;
+
 
     }
     public void decorator(String[] menuOptions){
@@ -36,9 +38,30 @@ public class BaseMenu {
             }
         }
         for (int i = 0; i < menuOptions[index].length(); i++) {
-            decorator += "*";
+            decorator += "#";
         }
         logger.sysOutStringData(decorator);
+    }
+    public int getInput(){
+        boolean validInput = false;
+        Scanner sc = new Scanner(System.in);
+        int choice = 0;
+        while (!validInput) {
+            try {
+                logger.sysOutStringData("Enter \"1\", \"2\", \"3\Logger logger = new Logger();", \"4\", \"5\" or \"6\": ");
+                choice = (Integer.parseInt(sc.nextLine()));
+                if (choice >= 0 && choice < options.length) {
+                    validInput = true;
+                } 
+
+            } catch (NumberFormatException e) {
+                logger.log("Error ", "Enter a valid menu option number!");
+            }
+        }
+        sc.close();
+        return choice; 
+        
+        
     }
 
 }
