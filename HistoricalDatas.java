@@ -22,7 +22,7 @@ public class HistoricalDatas {
     }
 
     public void fileWriter(String data, String fileName) throws Exception{
-        FlileWriter writeFile = new FileWriter(fileName);
+        FileWriter writeFile = new FileWriter(fileName);
         BufferedWriter write = new BufferedWriter(writeFile);
         write.write(data);
         write.newLine();
