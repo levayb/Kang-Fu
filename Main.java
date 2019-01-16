@@ -12,10 +12,10 @@ public class Main {
     */
     public static void main(String[] args) {
         Logger logger = new Logger();
-        //battleTest(logger);
-        //kangarooGeneratorTest(logger);
-        //menuTest(logger);
-        fileTester(logger);
+        // battleTest(logger);
+        // kangarooGeneratorTest(logger);
+        menuTest(logger);
+        // fileTester(logger);
     }
 
     /* 
