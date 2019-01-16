@@ -11,6 +11,7 @@ public class Fighter {
     protected int defense = 50;
     protected int damage = 10;
     protected Random rnd = new Random();
+    private Statistics statistics = new Statistics();
     
     protected static int maxId = 0;
     private int id;
@@ -75,5 +76,8 @@ public class Fighter {
     }
     public String getDataString() {
         return "Id" + Integer.toString(this.id)  + " " + this.name + " " + Integer.toString(this.health);
+    }
+    public Statistics getStatistics() {
+        return this.statistics;
     }
 }
