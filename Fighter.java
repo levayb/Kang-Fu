@@ -53,32 +53,49 @@ public class Fighter {
         String report = this.name + " -> " + enemy.getName() + "\n";
         int attackRoll = calculateBaseAttack(enemy);
         int damage = this.damage;
-        report += enemy.sufferAttack(attackRoll, damage);
+        boolean hit = enemy.sufferAttack(attackRoll, damage);
+        report += enemy.getHitReport();
+        if (hit) {
+            this.statistics.incrementHits();
+        } else {
+            this.statistics.incrementMisses();
+        }
         return report;
         // To be overriden as needed
     }
-    public String[] sufferAttack(int attackRoll, int damage){
-        String report = "";
+    public boolean sufferAttack(int attackRoll, int damage){
+        this.sufferedHitReport = "";
+        boolean attackHit;
         if (attackRoll > this.defense) {
+            attackHit = true;
             this.health -= damage;
-            report += "Hit, " + Integer.toString(damage) + " damage\n";
-            report += this.name + " has " + Integer.toString(this.health) + " hit points left.\n";
+            this.sufferedHitReport += "Hit, " + Integer.toString(damage) + " damage\n";
+            this.sufferedHitReport += this.name + " has " + Integer.toString(this.health) + " hit points left.\n";
         } else {
-            report += "Miss\n";
+            attackHit = false;
+            this.sufferedHitReport += "Miss\n";
         }
-        return report;
+        return attackHit;
 
     }
+
     public void regenerate() {
         this.health = this.maxHealth;
     }
+
     public int getId() {
         return this.id;
     }
+
     public String getDataString() {
         return "Id" + Integer.toString(this.id)  + " " + this.name + " " + Integer.toString(this.health);
     }
+
     public Statistics getStatistics() {
         return this.statistics;
+    }
+
+    public String getHitReport() {
+        return this.sufferedHitReport;
     }
 }
