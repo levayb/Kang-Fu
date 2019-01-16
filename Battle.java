@@ -39,16 +39,18 @@ public class Battle {
             logger.logBattle(pair[0].attack(pair[1]));
             logger.logBattle(pair[1].attack(pair[0]));
             if (pair[1].isDead()) {
-                logger.messageDekor("VICTORY");
-                logger.winMsg(pair[0].getName());
-                return pair[0];
+                return this.endFight(pair[0], pair[1]);
             } else if (pair[0].isDead()){
-                logger.messageDekor("VICTORY");
-                logger.winMsg(pair[1].getName());
-                return pair[1];
-                
+                return this.endFight(pair[1], pair[0]);
             }
         }
+    }
+    private Fighter endFight(Fighter winner, Fighter loser) {
+        winner.announceAsWinner();
+        loser.announceAsLoser();
+        logger.messageDekor("VICTORY");
+        logger.winMsg(winner.getName());
+        return winner;
     }
     public Fighter[] runRound(Fighter[] fighters) {
         this.roundNum++;
@@ -76,7 +78,13 @@ public class Battle {
         }
         return winners;
     }
-    public Fighter runTournament(Fighter[] contestants) {
+    public Fighter runTournament(Fighter[] fighters) {
+        Fighter[] contestants = new Fighter[fighters.length];
+        int i = 0;
+        for (Fighter fighter : fighters) {
+            contestants[i] = fighter;
+            i++;
+        }
         logger.messageDekor("TOURNAMENT");
         while(contestants.length > 1) {
             contestants = this.runRound(contestants);

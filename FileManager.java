@@ -10,6 +10,7 @@ public class FileManager {
     public String[][] read(String filename) throws IOException{
         /*
             Reads a file and returns a string matrix from it
+            Matrix format: [rows][columns]
         */
         LineNumberReader f = new LineNumberReader(new FileReader(filename));
         int numOfLines = getnumOfLines(f);
@@ -52,6 +53,7 @@ public class FileManager {
     public void write(String filename, String[][] inputArray) throws IOException {
         /*
             Writes a string matrix to a file
+            Matrix format: [rows][columns]
         */
         BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
         String str = "";
