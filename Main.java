@@ -14,8 +14,8 @@ public class Main {
         Logger logger = new Logger();
         // battleTest(logger);
         // kangarooGeneratorTest(logger);
-        menuTest(logger);
-        // fileTester(logger);
+        // menuTest(logger);
+        fileTester(logger);
         
     }
 
@@ -31,8 +31,6 @@ public class Main {
         KangarooGenerator k = new KangarooGenerator();
         Fighter[] kangaroos = k.createKangaroos(8);
         battle.runTournament(kangaroos);
-        
-        
     } 
 
     public static void kangarooGeneratorTest(Logger logger) {
@@ -49,13 +47,11 @@ public class Main {
         FileManager fileManager = new FileManager();
         try {
             String[][] s = fileManager.read("files/goat.csv");
+           
             logger.tablePrinter.printTable(s);
-            
-            fileManager.write("files/output", s);
+            //fileManager.write("files/output", s);
         } catch (IOException e) {
             System.out.println(e);
         }
     }
-
-
 }

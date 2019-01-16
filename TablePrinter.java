@@ -12,11 +12,11 @@ public class TablePrinter {
 
     public void printTable(String[][] table) {
 
-        String spacing = "";
-        for (int i = 0; i < table[0].length; i++) {
-            spacing += "l";
+        String justify = "";
+        for (int i = 0; i <= table[0].length; i++) {
+            justify += "l";
         }
-        printTable(table, spacing, 10, "| ");
+        printTable(table, justify, 10, "| ");
     }
 
     public void printTable(String[][] table, String justifyCols) {
@@ -44,7 +44,7 @@ public class TablePrinter {
         String spacingChar =  " ";
 
         // Calculate max length for each columns
-        int[] colMaxLength = new int[rowNum];
+        int[] colMaxLength = new int[colNum];
         for (int col = 0; col < colNum; col++) {
             for (int row = 0; row < rowNum; row++) {
                 try {
