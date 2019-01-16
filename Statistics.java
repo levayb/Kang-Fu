@@ -44,6 +44,4 @@ public class Statistics {
         loseStat = this.simCount / this.loseCount;
         return loseStat;
     }
-
-    
 }
