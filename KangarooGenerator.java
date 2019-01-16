@@ -7,7 +7,7 @@ import java.util.Random;
 public class KangarooGenerator {
 
     private FileManager fileManager;
-    
+
     public KangarooGenerator(){
     }
 
@@ -45,10 +45,10 @@ public class KangarooGenerator {
         }
         return kangaroos;
     }
-    public void writeKangaroosToFile(int num){
-        String[][] kangarooStats = new String[num][4];
+    public void writeKangaroosToFile(Kangaroo[] kangaroos){
+        String[][] kangarooStats = new String[kangaroos.length][4];
         int index = 0;
-        for (Kangaroo kangaroo : createKangaroos(num)) {
+        for (Kangaroo kangaroo : kangaroos) {
             kangarooStats[0][0] = kangaroo.getName();
             kangarooStats[0][1] = Integer.toString(kangaroo.getHealth());
             kangarooStats[0][2] = Integer.toString(kangaroo.getdamageReduction());
