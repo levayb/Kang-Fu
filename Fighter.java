@@ -11,6 +11,7 @@ public class Fighter {
     protected int defense = 50;
     protected int damage = 10;
     protected Random rnd = new Random();
+    protected String sufferedHitReport;
     private Statistics statistics = new Statistics(this);
     
     protected static int maxId = 0;
@@ -56,7 +57,7 @@ public class Fighter {
         return report;
         // To be overriden as needed
     }
-    public String sufferAttack(int attackRoll, int damage){
+    public String[] sufferAttack(int attackRoll, int damage){
         String report = "";
         if (attackRoll > this.defense) {
             this.health -= damage;

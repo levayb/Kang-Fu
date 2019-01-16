@@ -13,6 +13,9 @@
  */
 
 public class Statistics {
+    protected int hitCount = 0;
+    protected int missCount = 0;
+    protected int sufferedHitCount = 0;
     protected int simCount = 0;
     protected int winCount = 0;
     protected int loseCount = 0;
@@ -37,6 +40,18 @@ public class Statistics {
         return loseCount;
     }
 
+    public int countHits() {
+        return this.hitCount;
+    }
+
+    public int countMisses() {
+        return this.missCount;
+    }
+
+    public int countSufferedHits() {
+        return this.sufferedHitCount;
+    }
+
     public float winnerPercentage() {
         int winStat = this.simCount / this.winCount;
         return winStat;
@@ -46,9 +61,24 @@ public class Statistics {
         int loseStat = this.simCount / this.loseCount;
         return loseStat;
     }
-
     public String getName() {
         return this.fighter.getName();
+    }
+
+    public void incrementWin() {
+        this.winCount++;
+    }
+
+    public void incrementHits() {
+        this.hitCount++;
+    }
+
+    public void incrementMisses() {
+        this.missCount++;
+    }
+
+    public void incrementSufferedHits() {
+        this.sufferedHitCount++;
     }
 
 }
