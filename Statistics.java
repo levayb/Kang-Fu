@@ -16,8 +16,10 @@ public class Statistics {
     protected int simCount = 0;
     protected int winCount = 0;
     protected int loseCount = 0;
+    private Fighter fighter;
 
-    public Statistics(){
+    public Statistics(Fighter fighter){
+        this.fighter = fighter;
     }
 
     public int countSimulations() {
@@ -44,4 +46,9 @@ public class Statistics {
         int loseStat = this.simCount / this.loseCount;
         return loseStat;
     }
+
+    public String getName() {
+        return this.fighter.getName();
+    }
+
 }
