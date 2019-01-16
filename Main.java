@@ -12,10 +12,11 @@ public class Main {
     */
     public static void main(String[] args) {
         Logger logger = new Logger();
-        battleTest(logger);
+        //battleTest(logger);
         // kangarooGeneratorTest(logger);
         // menuTest(logger);
         // fileTester(logger);
+        testWriteKangaroosToFile();
         
     }
 
@@ -53,5 +54,10 @@ public class Main {
         } catch (IOException e) {
             System.out.println(e);
         }
+    
+    }
+    public static void testWriteKangaroosToFile(){
+        KangarooGenerator kangarooGenerator = new KangarooGenerator();
+        kangarooGenerator.writeKangaroosToFile(20);
     }
 }

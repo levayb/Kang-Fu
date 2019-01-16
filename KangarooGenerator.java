@@ -1,9 +1,19 @@
+import java.io.IOException;
 import java.util.Random;
 
 /**
  * KangarooGenerator
  */
 public class KangarooGenerator {
+
+    private FileManager fileManager;
+    
+    public KangarooGenerator(){
+    }
+
+    public KangarooGenerator(FileManager fileManager){
+        this.fileManager = fileManager;
+    }
 
     public Kangaroo createKangaroo(String name, int health, int damageReduction, int attack){
         
@@ -34,6 +44,21 @@ public class KangarooGenerator {
             kangaroos[i] = this.createKangaroo(name, health, damageReduction, attack);
         }
         return kangaroos;
+    }
+    public void writeKangaroosToFile(int num){
+        String[][] kangarooStats = new String[num][4];
+        int index = 0;
+        for (Kangaroo kangaroo : createKangaroos(num)) {
+            kangarooStats[0][0] = kangaroo.getName();
+            kangarooStats[0][1] = Integer.toString(kangaroo.getHealth());
+            kangarooStats[0][2] = Integer.toString(kangaroo.getdamageReduction());
+            kangarooStats[0][3] = Integer.toString(kangaroo.getattack());
+            index++;
+        }
+        try {
+            fileManager.write("kangaroosStats.csv", kangarooStats);
+        } catch (IOException e) {
+            }
     }
 
 }
