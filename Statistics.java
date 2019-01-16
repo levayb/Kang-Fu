@@ -65,8 +65,16 @@ public class Statistics {
         return this.fighter.getName();
     }
 
+    public int getId() {
+        return this.fighter.getId();
+    }
+
     public void incrementWin() {
         this.winCount++;
+    }
+
+    public void incrementLose() {
+        this.loseCount++;
     }
 
     public void incrementHits() {
@@ -81,4 +89,15 @@ public class Statistics {
         this.sufferedHitCount++;
     }
 
+    public String getPrintStr() {
+        String str = "";
+        str += "Id: " + Integer.toString(this.fighter.getId())  + "\n";
+        str += "Name: " + this.getName() + "\n";
+        str += "Victories: " + Integer.toString(this.winCount) + "\n";
+        str += "Defeats: " + Integer.toString(this.winCount) + "\n";
+        str += "Hits: " + Integer.toString(this.hitCount) + "\n";
+        str += "Misses: " + Integer.toString(this.missCount) + "\n";
+        str += "Suffered hits: " + Integer.toString(this.sufferedHitCount) + "\n";
+        return str;
+    }
 }

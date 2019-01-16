@@ -29,8 +29,11 @@ public class Main {
         logger.setLogging(false, true, true);
         Battle battle = new Battle(logger);
         KangarooGenerator k = new KangarooGenerator();
-        Fighter[] kangaroos = k.createKangaroos(8);
+        Fighter[] kangaroos = k.createKangaroos(16);
         battle.runTournament(kangaroos);
+        for (Fighter kangaroo : kangaroos) {
+            System.out.println(kangaroo.getStatistics().getPrintStr());
+        }
     } 
 
     public static void kangarooGeneratorTest(Logger logger) {

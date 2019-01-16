@@ -71,6 +71,7 @@ public class Fighter {
             this.health -= damage;
             this.sufferedHitReport += "Hit, " + Integer.toString(damage) + " damage\n";
             this.sufferedHitReport += this.name + " has " + Integer.toString(this.health) + " hit points left.\n";
+            this.statistics.incrementSufferedHits();
         } else {
             attackHit = false;
             this.sufferedHitReport += "Miss\n";
@@ -97,5 +98,13 @@ public class Fighter {
 
     public String getHitReport() {
         return this.sufferedHitReport;
+    }
+
+    public void announceAsWinner() {
+        this.statistics.incrementWin();
+    }
+
+    public void announceAsLoser() {
+        this.statistics.incrementLose();
     }
 }
