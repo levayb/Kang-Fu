@@ -51,9 +51,6 @@ public class Battle {
         this.roundNum++;
         this.fightNum = 0;
         // Init, regenerate and display
-        Logger.dekor();
-        Logger.dekor();
-        Logger.dekor();
         Logger.messageDekor("ROUND " + Integer.toString(this.roundNum) + " CONTESTANTS");
         for (Fighter fighter : fighters) {
             fighter.regenerate();
