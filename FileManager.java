@@ -8,6 +8,9 @@ import java.io.*;
 
 public class FileManager {
     public String[][] read(String filename) throws IOException{
+        /*
+            Reads a file and returns a string matrix from it
+        */
         LineNumberReader f = new LineNumberReader(new FileReader(filename));
         int numOfLines = getnumOfLines(f);
         f.mark(500);
@@ -46,7 +49,10 @@ public class FileManager {
         return outputArray;
     }
 
-    public String write(String filename, String[][] inputArray) throws IOException {
+    public void write(String filename, String[][] inputArray) throws IOException {
+        /*
+            Writes a string matrix to a file
+        */
         BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
         String str = "";
         for (String[] row : inputArray) {
@@ -59,6 +65,5 @@ public class FileManager {
         str = str.substring(0, str.length() - 1);
         writer.write(str);
         writer.close();
-        return str;
     }
 }

@@ -14,7 +14,7 @@ public class Main {
         Logger logger = new Logger();
         // battleTest(logger);
         // kangarooGeneratorTest(logger);
-        menuTest(logger);
+        // menuTest(logger);
         // fileTester(logger);
         
     }

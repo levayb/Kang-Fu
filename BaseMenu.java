@@ -15,11 +15,11 @@ public class BaseMenu {
     protected void showMenu(){
 
         logger.messageDekor("Menu options:");
-        //decorator(options);
+        decorator(options);
         for (int i = 0; i < maxOptions; i++) {
             logger.sysOutStringData(Integer.toString(i + 1) + " " + options[i]);
         }
-        //decorator(options);
+        decorator(options);
 
     }
     protected void addOption(String option){
@@ -29,7 +29,7 @@ public class BaseMenu {
 
     }
     public void decorator(String[] menuOptions){
-        String decorator = "";
+        String decorator = "🦘";
         int index = 0; 
         int elementLength = menuOptions[0].length();
         for(int i=1; i< menuOptions.length; i++) {
@@ -37,11 +37,12 @@ public class BaseMenu {
                 index = i; elementLength = menuOptions[i].length();
             }
         }
-        for (int i = 0; i < menuOptions[index].length(); i++) {
-            decorator += "#";
+        for (int i = 0; i < menuOptions[index].length() / 2; i++) {
+            decorator += " 🦘";
         }
-        logger.sysOutStringData(decorator);
+        logger.sysOutStringData("\n" + decorator + "\n");
     }
+
     public int getInput(){
         boolean validInput = false;
         Scanner sc = new Scanner(System.in);
