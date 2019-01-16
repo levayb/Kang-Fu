@@ -6,13 +6,18 @@ public class BaseMenu {
 
     private String[] options = new String[6];
     private int maxOptions = 0;
+    protected Logger logger;
+
+    public BaseMenu(Logger logger) {
+        this.logger = logger;
+    }
 
     protected void showMenu(){
 
         Logger.messageDekor("Menu options:");
         //decorator(options);
         for (String option : options) {
-            Logger.sysOutStringData("  " + option);
+            logger.sysOutStringData("  " + option);
         }
         //decorator(options);
 
@@ -35,7 +40,7 @@ public class BaseMenu {
         for (int i = 0; i < menuOptions[index].length(); i++) {
             decorator += "#";
         }
-        Logger.sysOutStringData(decorator);
+        logger.sysOutStringData(decorator);
     }
     public int getInput(){
         boolean validInput = false;

@@ -45,20 +45,26 @@ public class Fighter {
     }
     protected int calculateBaseAttack(Fighter enemy) {
         int baseAttackRoll = rnd.nextInt(100) + this.attack;
-        Logger.log("ATTACK", this.name + " -> " + enemy.getName());
         return baseAttackRoll;
     }
-    public void attack(Fighter enemy) {
+    public String attack(Fighter enemy) {
+        String report = this.name + " -> " + enemy.getName() + "\n";
+        int attackRoll = calculateBaseAttack(enemy);
+        int damage = this.damage;
+        report += enemy.sufferAttack(attackRoll, damage);
+        return report;
         // To be overriden as needed
     }
-    public void sufferAttack(int attackRoll, int damage){
+    public String sufferAttack(int attackRoll, int damage){
+        String report = "";
         if (attackRoll > this.defense) {
             this.health -= damage;
-            Logger.log("", "Hit, " + Integer.toString(damage) + " damage");
-            Logger.log("",  this.name + " has " + Integer.toString(this.health) + " hit points left.");
+            report += "Hit, " + Integer.toString(damage) + " damage\n";
+            report += this.name + " has " + Integer.toString(this.health) + " hit points left.\n";
         } else {
-            Logger.log("", "Miss");
+            report += "Miss\n";
         }
+        return report;
 
     }
     public void regenerate() {
@@ -67,7 +73,7 @@ public class Fighter {
     public int getId() {
         return this.id;
     }
-    public void displayData() {
-        Logger.sysOutStringData("Id" + Integer.toString(this.id)  + " " + this.name + " " + Integer.toString(this.health));
+    public String getDataString() {
+        return "Id" + Integer.toString(this.id)  + " " + this.name + " " + Integer.toString(this.health);
     }
 }
