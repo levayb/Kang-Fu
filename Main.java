@@ -20,7 +20,7 @@ public class Main {
     */
     public static void battleTest(Logger logger) {
         // For testing the battle system
-        logger.setLogging(true, true, true);
+        logger.setLogging(false, true, true);
         Battle battle = new Battle(logger);
         KangarooGenerator k = new KangarooGenerator();
         Fighter[] kangaroos = k.createKangaroos(8);

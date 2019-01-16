@@ -31,7 +31,7 @@ public class Battle {
         Fighter[] pair = rollForInitiative(fighter1, fighter2);
         // Show contestants
         logger.messageDekor("FIGHT " + Integer.toString(this.fightNum) + " CONTESTANTS");
-        this.logger.messageDekor(pair[0].getDataString());
+        this.logger.logRound(pair[0].getDataString());
         pair[1].getDataString();
 
         // Main fight cycle
@@ -62,7 +62,7 @@ public class Battle {
         // Pre-fight init
         Fighter[][] pairs = pairGen.makePair(fighters);
         Fighter[] winners = new Fighter[fighters.length / 2];
-        // Running ights
+        // Running fights
         int i = 0;
         for (Fighter[] pair : pairs) {
             winners[i] = this.runFight(pair[0], pair[1]);
@@ -72,7 +72,7 @@ public class Battle {
         logger.messageDekor("Round Winners");
         for (Fighter f : winners) {
             // System.out.println(f.getName());
-            this.logger.messageDekor(f.getDataString());
+            this.logger.logBattle(f.getDataString());
         }
         return winners;
     }
