@@ -4,8 +4,8 @@
 public class Kangaroo extends Fighter {
 
 
-    public Kangaroo(String name, int health, int damageReduction, int attack){
-        super(name, health, damageReduction, attack);
+    public Kangaroo(String name, int health, int damageReduction, int attack, int defense){
+        super(name, health, damageReduction, attack, defense);
         
     }
     public int bigKick(){
