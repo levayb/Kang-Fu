@@ -36,12 +36,12 @@ public class Statistics {
     }
 
     public float winnerPercentage() {
-        winStat = this.simCount / this.winCount;
+        int winStat = this.simCount / this.winCount;
         return winStat;
     }
 
     public float looserPercentage() {
-        loseStat = this.simCount / this.loseCount;
+        int loseStat = this.simCount / this.loseCount;
         return loseStat;
     }
 }
