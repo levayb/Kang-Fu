@@ -24,6 +24,7 @@ public class FileManager {
         }
         return outputArray;
     }
+
     private int getnumOfLines(LineNumberReader f) throws IOException{
         int numOfLines = 1;
         f.mark(5000);
@@ -43,5 +44,9 @@ public class FileManager {
             outputArray[i] = f.readLine();
         }
         return outputArray;
+    }
+
+    public void write(String filename, String[][] inputArray) throws IOException {
+
     }
 }

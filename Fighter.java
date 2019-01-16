@@ -11,7 +11,7 @@ public class Fighter {
     protected int defense = 50;
     protected int damage = 10;
     protected Random rnd = new Random();
-    private Statistics statistics = new Statistics();
+    private Statistics statistics = new Statistics(this);
     
     protected static int maxId = 0;
     private int id;

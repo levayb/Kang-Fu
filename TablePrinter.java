@@ -9,6 +9,7 @@ public class TablePrinter {
         */
         System.out.println(message);
     }
+
     public void printTable(String[][] table) {
 
         String spacing = "";
@@ -17,12 +18,15 @@ public class TablePrinter {
         }
         printTable(table, spacing, 10, "| ");
     }
+
     public void printTable(String[][] table, String justifyCols) {
         printTable(table, justifyCols, 3, "| ");
     }
+
     public void printTable(String[][] table, String justifyCols, int extraSpacingLength) {
         printTable(table, justifyCols, extraSpacingLength, "| ");
     }
+
     public void printTable(String[][] table, String justifyCols, int extraSpacingLength, String border) {
         /*
         Prints table.
