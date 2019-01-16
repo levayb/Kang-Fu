@@ -12,17 +12,11 @@ public class Main {
     */
     public static void main(String[] args) {
         Logger logger = new Logger();
-<<<<<<< HEAD
         // battleTest(logger);
         // kangarooGeneratorTest(logger);
         menuTest(logger);
         // fileTester(logger);
-=======
-        //battleTest(logger);
-        //kangarooGeneratorTest(logger);
-        menuTest(logger);
-        //fileTester(logger);
->>>>>>> 9f042a86bb338dc09a9055a4795cc631c3e3ca56
+        
     }
 
     /* 
