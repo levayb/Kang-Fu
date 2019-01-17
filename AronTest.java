@@ -38,7 +38,7 @@ public class AronTest {
         }
         System.out.println(result.getWinner().getName());
         HistoricalDatas hd = new HistoricalDatas(logger);
-        hd.WriteResultToFile(result);
+        // hd.WriteResultToFile(result);
     } 
 
     public static void kangarooGeneratorTest(Logger logger) {
