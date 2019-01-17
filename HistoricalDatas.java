@@ -71,4 +71,9 @@ public class HistoricalDatas {
             logger.logSimpleMsg("Suffered hits: " + toConsole[5]);
         }
     }
+
+    public Result[] readTournamentFiles(String filname) {
+        FileManager fileManager = new FileManager();
+        String[][] tournaments = fileManager.readTxt(filename);
+    }
 }
