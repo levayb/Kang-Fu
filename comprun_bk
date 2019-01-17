@@ -2,6 +2,6 @@
 # This file compiles and runs the program
 
 # Compile
-javac AronTest.java -d target/
+javac Main.java -d target/
 # Run
-java -cp target/ AronTest
+java -cp target/ Main
