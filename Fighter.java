@@ -27,6 +27,10 @@ public class Fighter {
         this.defense = defense;
         maxId ++;
     }
+    public Fighter(int id, String name, int health, int damageReduction, int attack, int defense) {
+        this(name, health, damageReduction, attack, defense);
+        this.id = id;
+    }
     public String getName() {
         return this.name;
     }

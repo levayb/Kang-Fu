@@ -8,6 +8,10 @@ public class Kangaroo extends Fighter {
         super(name, health, damageReduction, attack, defense);
         
     }
+    public Kangaroo(int id, String name, int health, int damageReduction, int attack, int defense){
+        super(id, name, health, damageReduction, attack, defense);
+        
+    }
     public int bigKick(){
         int specialAttack = super.attack + 20;
         if (super.damageReduction - 10 > 0) {
