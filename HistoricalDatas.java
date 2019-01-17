@@ -36,7 +36,7 @@ public class HistoricalDatas {
         } catch (IOException e) {
         }
     }
-
+    
     public void readResultFromFile(String filename) {
         String[][] statMatrix = new String[1][1];
         FileManager readMatrix = new FileManager();

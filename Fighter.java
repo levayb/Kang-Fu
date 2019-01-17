@@ -9,7 +9,6 @@ public class Fighter {
     protected int damageReduction;
     protected int attack;
     protected int defense = 50;
-    protected int damage = 10;
     protected Random rnd = new Random();
     protected String sufferedHitReport;
     private Statistics statistics;
@@ -63,7 +62,7 @@ public class Fighter {
     public String attack(Fighter enemy) {
         String report = this.name + " -> " + enemy.getName() + "\n";
         int attackRoll = calculateBaseAttack(enemy);
-        int damage = this.damage;
+        int damage = this.damageReduction;
         boolean hit = enemy.sufferAttack(attackRoll, damage);
         report += enemy.getHitReport();
         if (hit) {
