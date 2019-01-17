@@ -42,15 +42,6 @@ public class Logger {
         System.out.println("\n" + star + msg + star + "\n");
     }
 
-    // public  void dekor() {
-    //     int sMax = 45;
-    //     String star = "";
-    //     for (int i = 0; i < sMax; i++) {
-    //         star += "*";
-    //     }
-    //     System.out.println("\n" + star);
-    // }
-
     public void setLogging(boolean battle_logging, boolean round_logging, boolean tournament_logging) {
         battleLogging = battle_logging;
         roundLogging = round_logging;
