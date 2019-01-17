@@ -80,7 +80,7 @@ public class KangarooGenerator {
                                             kangarooStats[i][1], 
                                             Integer.parseInt(kangarooStats[i][2]), 
                                             Integer.parseInt(kangarooStats[i][3]), 
-                                            Integer.parseInt(kangarooStats[i][4])
+                                            Integer.parseInt(kangarooStats[i][4]),
                                             Integer.parseInt(kangarooStats[i][5]));
             }
         return kangaroos;

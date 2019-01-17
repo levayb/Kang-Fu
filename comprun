@@ -2,6 +2,6 @@
 # This file compiles and runs the program
 
 # Compile
-javac Main.java -d target/
+javac GaborTest.java -d target/
 # Run
-java -cp target/ Main
+java -cp target/ GaborTest
