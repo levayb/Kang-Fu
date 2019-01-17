@@ -33,7 +33,8 @@ public class Menu extends BaseMenu {
         switch (super.getInput())
         {
             case 1:
-                System.out.println("test option 1");
+                Battle battle = new Battle(logger);
+                battle.runTournament(kangaroos);
                 break;
             case 2: 
                 TablePrinter tablePrinter = new TablePrinter();
@@ -49,10 +50,7 @@ public class Menu extends BaseMenu {
                 System.out.println("test option 5");
                 break;
             case 6: 
-                System.out.println("test option 6");
                 break;
-            default:
-                System.out.println("Choice must be a value between 1 and 6.");
         }   
     } 
 }

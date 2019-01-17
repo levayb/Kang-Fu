@@ -71,9 +71,14 @@ public class HistoricalDatas {
             logger.logSimpleMsg("Suffered hits: " + toConsole[5]);
         }
     }
+<<<<<<< HEAD
 
     private Result[] attemptToRead() throws IOException{
         String dataBaseLocation = "files/tournaments/dbase.csv";
+=======
+    /*
+    public Result[] readTournamentFiles(String filename) {
+>>>>>>> a38c6003a75e99367a844206e02182d6653cb188
         FileManager fileManager = new FileManager();
         String[][] files = fileManager.read(dataBaseLocation);
         Result[] result = new Result[files.length];
@@ -104,4 +109,6 @@ public class HistoricalDatas {
         }
         return res;
     }
+    */
+    
 }

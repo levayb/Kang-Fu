@@ -82,7 +82,7 @@ public class KangarooGenerator {
             //TODO: handle exception
         }
         kangaroos = new Kangaroo[kangarooStats.length];
-        for (int i = 1; i < kangarooStats.length; i++) {
+        for (int i = 0; i < kangarooStats.length; i++) {
             kangaroos[i] = createKangaroo(Integer.parseInt(kangarooStats[i][0]), 
                                             kangarooStats[i][1], 
                                             Integer.parseInt(kangarooStats[i][2]), 
