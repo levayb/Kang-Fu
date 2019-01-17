@@ -18,7 +18,7 @@ public class Main {
         // kangarooGeneratorTest(logger);
         // menuTest(logger);
         // fileTester(logger);
-        testWriteKangaroosToFile();
+        // testWriteKangaroosToFile();
         
     }
 
