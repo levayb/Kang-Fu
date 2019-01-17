@@ -3,18 +3,31 @@
  */
 public class Result {
     Statistics[] statistics;
+    Fighter winner;
 
-    public void Result(){
+    public Result(){
         
     }
-    public void addBatch(Kangaroo[] kangaroos) {
+
+    public Result(Fighter[] fighters, Fighter winner){
+        addBatch(fighters);
+        this.winner = winner;
+    }
+
+
+    public void addBatch(Fighter[] kangaroos) {
         statistics = new Statistics[kangaroos.length];
         int i = 0;
-        for (Kangaroo kangaroo : kangaroos) {
+        for (Fighter kangaroo : kangaroos) {
             statistics[i] = kangaroo.getStatistics();
             i++;
         }
     }
+
+    public void addBatch(Statistics[] statistics) {
+        this.statistics = statistics;
+    }
+
     public Statistics[] getStatistics() {
         return statistics;
     }

@@ -79,7 +79,7 @@ public class Battle {
         }
         return winners;
     }
-    public Fighter runTournament(Fighter[] fighters) {
+    public Result runTournament(Fighter[] fighters) {
         Fighter[] contestants = new Fighter[fighters.length];
         int i = 0;
         for (Fighter fighter : fighters) {
@@ -91,7 +91,7 @@ public class Battle {
             contestants = this.runRound(contestants);
         }
         Fighter tournamentWinner = contestants[0];
-        
-        return tournamentWinner;
+        Result result = new Result(fighters, tournamentWinner);
+        return result;
     }
 }

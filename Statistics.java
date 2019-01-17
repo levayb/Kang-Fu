@@ -19,10 +19,20 @@ public class Statistics {
     protected int simCount = 0;
     protected int winCount = 0;
     protected int loseCount = 0;
-    private Fighter fighter;
+    private String name = "";
+    private int id = 0;
 
     public Statistics(Fighter fighter){
-        this.fighter = fighter;
+        id = fighter.getId();
+        name = fighter.getName();
+    }
+    
+    public Statistics(int id, int wins, int losses, int hitCount, int missCount, int sufferedHitCount) {
+        this.winCount = wins;
+        this.loseCount = losses;
+        this.hitCount = hitCount;
+        this.missCount = missCount;
+        this.sufferedHitCount = sufferedHitCount;
     }
 
     public int countSimulations() {
@@ -62,11 +72,11 @@ public class Statistics {
         return loseStat;
     }
     public String getName() {
-        return this.fighter.getName();
+        return this.name;
     }
 
     public int getId() {
-        return this.fighter.getId();
+        return this.id;
     }
 
     public void incrementWin() {
@@ -91,8 +101,8 @@ public class Statistics {
 
     public String getPrintStr() {
         String str = "";
-        str += "Id: " + Integer.toString(this.fighter.getId())  + "\n";
-        str += "Name: " + this.getName() + "\n";
+        str += "Id: " + Integer.toString(this.id)  + "\n";
+        str += "Name: " + this.name + "\n";
         str += "Victories: " + Integer.toString(this.winCount) + "\n";
         str += "Defeats: " + Integer.toString(this.winCount) + "\n";
         str += "Hits: " + Integer.toString(this.hitCount) + "\n";

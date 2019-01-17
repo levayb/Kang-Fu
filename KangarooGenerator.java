@@ -74,6 +74,7 @@ public class KangarooGenerator {
         Kangaroo[] kangaroos;
         String[][] kangarooStats = new String[1][0];
         FileManager fileManager = new FileManager();
+        System.out.println("ííííííííííííííííííííííííííííííííííííííííííííííííííííííííííí");
         try {
             kangarooStats = fileManager.read(fileName);
         } catch (IOException e) {
