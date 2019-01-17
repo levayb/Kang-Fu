@@ -17,7 +17,7 @@ public class AronTest {
         battleTest(logger);
         // kangarooGeneratorTest(logger);
         // menuTest(logger);
-        // fileTester(logger);
+        fileTester(logger);
         // testWriteKangaroosToFile();
         
     }
