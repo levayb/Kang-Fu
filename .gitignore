@@ -2,5 +2,9 @@
 TestBoldi.java
 comprun
 target/
+<<<<<<< HEAD
 files/tournamnets
+=======
+files/tournaments
+>>>>>>> fd3b498629230b46d9c847bc67480d361281297f
 goat
