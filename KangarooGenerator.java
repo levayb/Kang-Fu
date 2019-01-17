@@ -55,7 +55,9 @@ public class KangarooGenerator {
     public void writeKangaroosToFile(Kangaroo[] kangaroos){
         fileName = "files/kangaroosStats.csv";
         String[][] kangarooStats = new String[kangaroos.length][6];
-        int index = 0;
+
+
+        int index = 1;
         for (Kangaroo kangaroo : kangaroos) {
             kangarooStats[index][0] = Integer.toString(kangaroo.getId());
             kangarooStats[index][1] = kangaroo.getName();
@@ -75,13 +77,12 @@ public class KangarooGenerator {
         String[][] kangarooStats = new String[1][0];
         FileManager fileManager = new FileManager();
         try {
-            System.out.println("ííííííííííííííííííííííííííííííííííííííííííííííííííííííííííí");
             kangarooStats = fileManager.read(fileName);
         } catch (IOException e) {
             //TODO: handle exception
         }
         kangaroos = new Kangaroo[kangarooStats.length];
-        for (int i = 0; i < kangarooStats.length; i++) {
+        for (int i = 1; i < kangarooStats.length; i++) {
             kangaroos[i] = createKangaroo(Integer.parseInt(kangarooStats[i][0]), 
                                             kangarooStats[i][1], 
                                             Integer.parseInt(kangarooStats[i][2]), 
@@ -94,6 +95,32 @@ public class KangarooGenerator {
     }public Kangaroo[] createKangaroosFromFile(){
         return this.createKangaroosFromFile(fileName);
 
+    }public String[][] readKangaroosStatsFromFile(){
+        
+        String[][] kangarooStats = new String[0][0];
+        String[] temp = new String[6];
+        String[][] statsFromFile = new String[0][0];
+
+        FileManager fileManager = new FileManager();
+        try {
+            statsFromFile = fileManager.read("files/kangaroosStats.csv");
+            kangarooStats = new String[statsFromFile.length + 1][6];
+            kangarooStats[0][0] = "Id";
+            kangarooStats[0][1] = "Name";
+            kangarooStats[0][2] = "Health";
+            kangarooStats[0][3] = "DamageReduction";
+            kangarooStats[0][4] = "Attack";
+            kangarooStats[0][5] = "Defense";
+        
+        for (int i = 1; i < kangarooStats.length; i++) {
+            kangarooStats[i] = statsFromFile[i - 1];
+            }
+        } catch (IOException e) {
+            
+            //TODO: handle exception
+        }
+        
+        return kangarooStats;
     }
 
 }
