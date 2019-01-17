@@ -72,9 +72,10 @@ public class HistoricalDatas {
         }
     }
     /*
-    public Result[] readTournamentFiles(String filname) {
+    public Result[] readTournamentFiles(String filename) {
         FileManager fileManager = new FileManager();
         String[][] tournaments = fileManager.readTxt(filename);
     }
     */
+    
 }
