@@ -12,13 +12,13 @@ public class Main {
     */
     public static void main(String[] args) {
         Logger logger = new Logger();
-        logger.setLogging(true, true, true);
+        logger.setLogging(false, true, true);
         logger.setWaitingForUser(false, false, false);
-        battleTest(logger);
+        // battleTest(logger);
         // kangarooGeneratorTest(logger);
         // menuTest(logger);
         // fileTester(logger);
-        // testWriteKangaroosToFile();
+        testWriteKangaroosToFile();
         
     }
 

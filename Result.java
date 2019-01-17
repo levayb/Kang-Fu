@@ -2,8 +2,13 @@
  * Result
  */
 public class Result {
+    Statistics[] statistics;
 
-    public Result(){
+    public void Result(){
+        
+    }
+
+    public void addBatch(Kangaroo[] kangaroos) {
         
     }
 }

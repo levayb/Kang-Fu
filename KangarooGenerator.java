@@ -47,14 +47,15 @@ public class KangarooGenerator {
         return kangaroos;
     }
     public void writeKangaroosToFile(Kangaroo[] kangaroos){
-        String[][] kangarooStats = new String[kangaroos.length][5];
+        String[][] kangarooStats = new String[kangaroos.length][6];
         int index = 0;
         for (Kangaroo kangaroo : kangaroos) {
-            kangarooStats[index][0] = kangaroo.getName();
-            kangarooStats[index][1] = Integer.toString(kangaroo.getHealth());
-            kangarooStats[index][2] = Integer.toString(kangaroo.getdamageReduction());
-            kangarooStats[index][3] = Integer.toString(kangaroo.getattack());
-            kangarooStats[index][4] = Integer.toString(kangaroo.getDefense());
+            kangarooStats[index][0] = Integer.toString(kangaroo.getId());
+            kangarooStats[index][1] = kangaroo.getName();
+            kangarooStats[index][2] = Integer.toString(kangaroo.getHealth());
+            kangarooStats[index][3] = Integer.toString(kangaroo.getdamageReduction());
+            kangarooStats[index][4] = Integer.toString(kangaroo.getattack());
+            kangarooStats[index][5] = Integer.toString(kangaroo.getDefense());
             index++;
         }
         try {
