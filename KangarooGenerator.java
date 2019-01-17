@@ -116,6 +116,7 @@ public class KangarooGenerator {
             kangarooStats[i] = statsFromFile[i - 1];
             }
         } catch (IOException e) {
+            
             //TODO: handle exception
         }
         
