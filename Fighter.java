@@ -9,10 +9,9 @@ public class Fighter {
     protected int damageReduction;
     protected int attack;
     protected int defense = 50;
-    protected int damage = 10;
     protected Random rnd = new Random();
     protected String sufferedHitReport;
-    private Statistics statistics = new Statistics(this);
+    private Statistics statistics;
     
     protected static int maxId = 0;
     private int id;
@@ -25,6 +24,7 @@ public class Fighter {
         this.attack = attack;
         this.id = maxId;
         this.defense = defense;
+        this.statistics = new Statistics(this);
         maxId ++;
     }
     public Fighter(int id, String name, int health, int damageReduction, int attack, int defense) {
@@ -62,7 +62,7 @@ public class Fighter {
     public String attack(Fighter enemy) {
         String report = this.name + " -> " + enemy.getName() + "\n";
         int attackRoll = calculateBaseAttack(enemy);
-        int damage = this.damage;
+        int damage = this.damageReduction;
         boolean hit = enemy.sufferAttack(attackRoll, damage);
         report += enemy.getHitReport();
         if (hit) {

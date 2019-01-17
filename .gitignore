@@ -1,4 +1,11 @@
 .gitignore
+<<<<<<< HEAD
 GaborTest.java
 targer/
 comprun
+=======
+TestBoldi.java
+comprun
+target/
+goat
+>>>>>>> 0af8bdad124cb3b1c924725bfd5ac39d352c8d43

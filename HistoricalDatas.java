@@ -32,11 +32,25 @@ public class HistoricalDatas {
         }
         FileManager writeMatrix = new FileManager();
         try {
-            writeMatrix.write("files/tournaments/test.csv", statMatrix);
+            String[][] files = writeMatrix.read("files/tournaments/dbase.csv");
+            int fileNum = Integer.parseInt(files[files.length - 1][0]);
+            fileNum++;
+            String logFileName = Integer.toString(fileNum);
+            writeMatrix.write("files/tournaments/" + logFileName +".csv", statMatrix);
+            updateDbaseFile(writeMatrix, files, fileNum);
         } catch (IOException e) {
         }
     }
 
+    private void updateDbaseFile(FileManager fileManager, String[][] files, int fileNum) throws IOException{
+        String[][] output = new String[files.length + 1][1];
+        for (int i = 0; i < files.length; i++) {
+            output[i][0] = files[i][0];
+        }
+        output[output.length - 1][0] = Integer.toString(fileNum);
+        fileManager.write("files/tournaments/dbase.csv", output);
+
+    }
     public void readResultFromFile(String filename) {
         String[][] statMatrix = new String[1][1];
         FileManager readMatrix = new FileManager();
@@ -58,6 +72,3 @@ public class HistoricalDatas {
         }
     }
 }
-
-
-// git commit -am "HistoricalDatas.java/ write and read to file methods are implemented and write to console method as well"
