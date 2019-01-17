@@ -14,11 +14,11 @@ public class Main {
         Logger logger = new Logger();
         logger.setLogging(false, true, true);
         logger.setWaitingForUser(false, false, false);
-        // battleTest(logger);
+        battleTest(logger);
         // kangarooGeneratorTest(logger);
         // menuTest(logger);
         // fileTester(logger);
-        testWriteKangaroosToFile();
+        // testWriteKangaroosToFile();
         
     }
 
@@ -33,9 +33,10 @@ public class Main {
         KangarooGenerator k = new KangarooGenerator();
         Fighter[] kangaroos = k.createKangaroos(16);
         battle.runTournament(kangaroos);
-        for (Fighter kangaroo : kangaroos) {
-            System.out.println(kangaroo.getStatistics().getPrintStr());
-        }
+        Result res = new Result();
+        res.addBatch((Kangaroo[])kangaroos);
+        HistoricalDatas hiszti = new HistoricalDatas(logger);
+        hiszti.WriteResultToFile(res);
     } 
 
     public static void kangarooGeneratorTest(Logger logger) {
