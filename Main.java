@@ -31,12 +31,14 @@ public class Main {
         // For testing the battle system
         Battle battle = new Battle(logger);
         KangarooGenerator k = new KangarooGenerator();
-        Fighter[] kangaroos = k.createKangaroos(16);
-        battle.runTournament(kangaroos);
-        Result res = new Result();
-        res.addBatch((Kangaroo[])kangaroos);
-        HistoricalDatas hiszti = new HistoricalDatas(logger);
-        hiszti.WriteResultToFile(res);
+        Fighter[] kangaroos = k.createKangaroosFromFile("files/kangaroosStats.csv");
+        Result result = battle.runTournament(kangaroos);
+        for (Fighter kangaroo : kangaroos) {
+            System.out.println(kangaroo.getStatistics().getPrintStr());
+        }
+        System.out.println(result.getWinner().getName());
+        HistoricalDatas hd = new HistoricalDatas(logger);
+        hd.WriteResultToFile(result);
     } 
 
     public static void kangarooGeneratorTest(Logger logger) {
