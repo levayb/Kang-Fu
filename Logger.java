@@ -80,4 +80,8 @@ public class Logger {
             }
         }
     }
+
+    public void logSimpleMsg(String msg) {
+        System.out.println(msg);
+    }
 } 

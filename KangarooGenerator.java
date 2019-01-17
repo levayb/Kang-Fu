@@ -7,6 +7,7 @@ import java.util.Random;
 public class KangarooGenerator {
 
     private FileManager fileManager;
+    private String fileName;
 
     public KangarooGenerator(){
     }
@@ -20,7 +21,12 @@ public class KangarooGenerator {
         Kangaroo kangaroo = new Kangaroo(name, health, damageReduction, attack, defense);
         return kangaroo;
     }
-                        
+    public Kangaroo createKangaroo(int id, String name, int health, int damageReduction, int attack, int defense){
+        
+        Kangaroo kangaroo = new Kangaroo(id, name, health, damageReduction, attack, defense);
+        return kangaroo;
+        //return kangaroo;
+    }
     public Kangaroo[] createKangaroos(int number){
 
         Kangaroo[] kangaroos = new Kangaroo[number];
@@ -47,6 +53,7 @@ public class KangarooGenerator {
         return kangaroos;
     }
     public void writeKangaroosToFile(Kangaroo[] kangaroos){
+        fileName = "files/kangaroosStats.csv";
         String[][] kangarooStats = new String[kangaroos.length][6];
         int index = 0;
         for (Kangaroo kangaroo : kangaroos) {
@@ -62,6 +69,30 @@ public class KangarooGenerator {
             fileManager.write("files/kangaroosStats.csv", kangarooStats);
         } catch (IOException e) {
             }
+    }
+    public Kangaroo[] createKangaroosFromFile(String fileName){
+        Kangaroo[] kangaroos;
+        String[][] kangarooStats = new String[1][0];
+        FileManager fileManager = new FileManager();
+        try {
+            kangarooStats = fileManager.read(fileName);
+        } catch (IOException e) {
+            //TODO: handle exception
+        }
+        kangaroos = new Kangaroo[kangarooStats.length];
+        for (int i = 0; i < kangarooStats.length; i++) {
+            kangaroos[i] = createKangaroo(Integer.parseInt(kangarooStats[i][0]), 
+                                            kangarooStats[i][1], 
+                                            Integer.parseInt(kangarooStats[i][2]), 
+                                            Integer.parseInt(kangarooStats[i][3]), 
+                                            Integer.parseInt(kangarooStats[i][4]),
+                                            Integer.parseInt(kangarooStats[i][5]));
+            }
+        return kangaroos;
+
+    }public Kangaroo[] createKangaroosFromFile(){
+        return this.createKangaroosFromFile(fileName);
+
     }
 
 }

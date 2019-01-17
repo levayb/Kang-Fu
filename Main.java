@@ -14,7 +14,7 @@ public class Main {
         Logger logger = new Logger();
         logger.setLogging(false, true, true);
         logger.setWaitingForUser(false, false, false);
-        // battleTest(logger);
+        battleTest(logger);
         // kangarooGeneratorTest(logger);
         // menuTest(logger);
         // fileTester(logger);
@@ -33,9 +33,10 @@ public class Main {
         KangarooGenerator k = new KangarooGenerator();
         Fighter[] kangaroos = k.createKangaroos(16);
         battle.runTournament(kangaroos);
-        for (Fighter kangaroo : kangaroos) {
-            System.out.println(kangaroo.getStatistics().getPrintStr());
-        }
+        Result res = new Result();
+        res.addBatch((Kangaroo[])kangaroos);
+        HistoricalDatas hiszti = new HistoricalDatas(logger);
+        hiszti.WriteResultToFile(res);
     } 
 
     public static void kangarooGeneratorTest(Logger logger) {
@@ -63,7 +64,11 @@ public class Main {
     public static void testWriteKangaroosToFile(){
         FileManager fm = new FileManager();
         KangarooGenerator kangarooGenerator = new KangarooGenerator(fm);
-        Kangaroo[] kangaroos = kangarooGenerator.createKangaroos(16);
-        kangarooGenerator.writeKangaroosToFile(kangaroos);
+        Kangaroo[] kangaroos = kangarooGenerator.createKangaroosFromFile("files/kangaroosStats.csv");
+        //kangarooGenerator.writeKangaroosToFile(kangaroos);
+        kangarooGenerator.createKangaroosFromFile();
+        for (Kangaroo var : kangaroos) {
+            System.out.println(var.getName());
+        }
     }
 }
