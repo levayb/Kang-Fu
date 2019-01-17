@@ -72,8 +72,36 @@ public class HistoricalDatas {
         }
     }
 
-    public Result[] readTournamentFiles(String filename) {
+    private Result[] attemptToRead() throws IOException{
+        String dataBaseLocation = "files/tournaments/dbase.csv";
         FileManager fileManager = new FileManager();
-        String[][] tournaments = fileManager.readTxt(filename);
+        String[][] files = fileManager.read(dataBaseLocation);
+        Result[] result = new Result[files.length];
+        for (int i = 0; i < files.length; i++) {
+            String[][] tournaments = fileManager.read("files/tournaments/" + files[i][0] + ".csv");
+            Statistics[] stats = new Statistics[tournaments.length];
+            for (int j = 0; j < tournaments.length; j++) {
+                int id = Integer.parseInt(tournaments[j][0]);
+                int wins = Integer.parseInt(tournaments[j][1]);
+                int losses = Integer.parseInt(tournaments[j][2]);
+                int hitCount = Integer.parseInt(tournaments[j][3]);
+                int missCount = Integer.parseInt(tournaments[j][4]);
+                int sufferedHitCount = Integer.parseInt(tournaments[j][5]);
+                stats[j] = new Statistics(id, wins, losses, hitCount, missCount, sufferedHitCount);
+            }
+            result[i] = new Result();
+            result[i].addBatch(stats);
+        }
+        return result;
+    }
+
+    public Result[] readResultFromFile() {
+        Result[] res = new Result[2];
+        try {
+            res = attemptToRead();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return res;
     }
 }

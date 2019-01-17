@@ -28,6 +28,7 @@ public class Statistics {
     }
     
     public Statistics(int id, int wins, int losses, int hitCount, int missCount, int sufferedHitCount) {
+        this.id = id;
         this.winCount = wins;
         this.loseCount = losses;
         this.hitCount = hitCount;
