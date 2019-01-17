@@ -11,12 +11,28 @@
  */
 
 public class DataEvaluator {
+    private Logger logger;
+    private HistoricalDatas historicalDatas;
 
     public DataEvaluator(HistoricalDatas historicalDatas, Logger logger){
-
+        this.historicalDatas = historicalDatas;
+        this.logger = logger;
     }
 
-    public void run() {
-        
+    public void getMax(String filename, int index, String maxTypeLabel) {
+        String[][] theBestContestant = historicalDatas.readResultFromFile(filename);
+        int max = 0;
+        String maxId;
+        for (int i = 0; i < theBestContestant.length; i++) {
+            if (max < Integer.parseInt(theBestContestant[i][index])) {
+                max = theBestContestant[i][index];
+                maxId = theBestContestant[i][0];
+            }
+        }
+        logger.logSimpleMsg(maxTypeLabel + " Id is: " + maxId);
     }
+
+    // public void sumStat(String filename) {
+
+    // }
 }
