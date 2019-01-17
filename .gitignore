@@ -1,17 +1,3 @@
-.gitignore
-<<<<<<< HEAD
-GaborTest.java
-targer/tournaments
-files/targer
-=======
-TestBoldi.java
 comprun
 target/
 files/tournaments
-<<<<<<< HEAD
-=======
->>>>>>> fd3b498629230b46d9c847bc67480d361281297f
->>>>>>> 51dd4680064e6e8c2b642574719ce6110969f763
->>>>>>> d68e926f510d51b7a9b56f878e09ae137ded20e2
-goat
-comprun
