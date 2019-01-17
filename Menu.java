@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.nio.file.attribute.BasicFileAttributes;
 
 /**
  * Menu
@@ -33,7 +34,8 @@ public class Menu extends BaseMenu {
         switch (super.getInput())
         {
             case 1:
-                System.out.println("test option 1");
+                Battle battle = new Battle(logger);
+                battle.runTournament(kangaroos);
                 break;
             case 2: 
                 TablePrinter tablePrinter = new TablePrinter();
