@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-AronTest.java
-comprun
-target/
-=======
+.gitignore
 GaborTest.java
 targer/
 comprun
->>>>>>> 24307e8f1d01bbdec35ffcbceb92f441bffc60f6

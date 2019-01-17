@@ -8,7 +8,7 @@ public class Menu extends BaseMenu {
     public Menu(Logger logger){
         super(logger);
         super.addOption("Fight");
-        super.addOption("Make kangaroos from file");
+        super.addOption("Show kangaroos stats");
         super.addOption("Show statistics");
         super.addOption("Result");
         super.addOption("Loading kangoroos from file");
@@ -16,6 +16,8 @@ public class Menu extends BaseMenu {
 
     }
     public void handleMenu() {
+        KangarooGenerator kangarooGenerator = new KangarooGenerator();
+        Kangaroo[] kangaroos = kangarooGenerator.createKangaroosFromFile("files/kangaroosStats.csv");
         FileManager fileManager = new FileManager();
         try {
             String[] asciArt = fileManager.readTxt("kangaroo.txt");
@@ -34,7 +36,8 @@ public class Menu extends BaseMenu {
                 System.out.println("test option 1");
                 break;
             case 2: 
-                System.out.println("test option 2");
+                TablePrinter tablePrinter = new TablePrinter();
+                tablePrinter.printTable(kangarooGenerator.readKangaroosStatsFromFile());
                 break;
             case 3: 
                 System.out.println("test option 3");
