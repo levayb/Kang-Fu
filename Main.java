@@ -63,7 +63,11 @@ public class Main {
     public static void testWriteKangaroosToFile(){
         FileManager fm = new FileManager();
         KangarooGenerator kangarooGenerator = new KangarooGenerator(fm);
-        Kangaroo[] kangaroos = kangarooGenerator.createKangaroos(16);
-        kangarooGenerator.writeKangaroosToFile(kangaroos);
+        Kangaroo[] kangaroos = kangarooGenerator.createKangaroosFromFile("files/kangaroosStats.csv");
+        //kangarooGenerator.writeKangaroosToFile(kangaroos);
+        kangarooGenerator.createKangaroosFromFile();
+        for (Kangaroo var : kangaroos) {
+            System.out.println(var.getName());
+        }
     }
 }
