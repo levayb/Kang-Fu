@@ -21,6 +21,7 @@ public class Battle {
         } else {
             return new Fighter[] {fighter2, fighter1};
         }
+        
     }
 
     public Fighter runFight(Fighter fighter1, Fighter fighter2) {
