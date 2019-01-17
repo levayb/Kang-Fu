@@ -58,6 +58,3 @@ public class HistoricalDatas {
         }
     }
 }
-
-
-// git commit -am "HistoricalDatas.java/ write and read to file methods are implemented and write to console method as well"
