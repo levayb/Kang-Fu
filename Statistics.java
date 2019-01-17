@@ -104,7 +104,7 @@ public class Statistics {
         str += "Id: " + Integer.toString(this.id)  + "\n";
         str += "Name: " + this.name + "\n";
         str += "Victories: " + Integer.toString(this.winCount) + "\n";
-        str += "Defeats: " + Integer.toString(this.winCount) + "\n";
+        str += "Defeats: " + Integer.toString(this.loseCount) + "\n";
         str += "Hits: " + Integer.toString(this.hitCount) + "\n";
         str += "Misses: " + Integer.toString(this.missCount) + "\n";
         str += "Suffered hits: " + Integer.toString(this.sufferedHitCount) + "\n";

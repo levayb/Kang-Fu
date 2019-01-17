@@ -14,7 +14,9 @@ public class Result {
         this.winner = winner;
     }
 
-
+    public Fighter getWinner() {
+        return winner;
+    }
     public void addBatch(Fighter[] kangaroos) {
         statistics = new Statistics[kangaroos.length];
         int i = 0;
