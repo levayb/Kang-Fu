@@ -51,24 +51,15 @@ public class HistoricalDatas {
         fileManager.write("files/tournaments/dbase.csv", output);
 
     }
-    public void readResultFromFile(String filename) {
-        String[][] statMatrix = new String[1][1];
-        FileManager readMatrix = new FileManager();
-        try {
-            statMatrix = readMatrix.read("files/tournaments/test.csv");
-        } catch (IOException e) {
-        }
-        writeResToConsole(statMatrix);
-    }
+  
 
-    private void writeResToConsole(String[][] stat) {
-        for (String[] toConsole : stat) {
-            logger.logSimpleMsg("Kangoo Id: " + toConsole[0]);
-            logger.logSimpleMsg("Wins: " + toConsole[1]);
-            logger.logSimpleMsg("Losses: " + toConsole[2]);
-            logger.logSimpleMsg("Num of hits : " + toConsole[3]);
-            logger.logSimpleMsg("Num of miss hits: " + toConsole[4]);
-            logger.logSimpleMsg("Suffered hits: " + toConsole[5]);
+    private void writeResToConsole(Result[] results) {
+        for (Result result : results) {
+            Statistics[] stats = result.getStatistics();
+            for (Statistics stat : stats) {
+                logger.logSimpleMsg(stat.getPrintStr());
+                
+            }
         }
     }
 
@@ -95,14 +86,15 @@ public class HistoricalDatas {
         return result;
     }
 
-    public Result[] readResultFromFile() {
+    public void readResultFromFile() {
         Result[] res = new Result[2];
         try {
             res = attemptToRead();
         } catch (Exception e) {
             System.out.println(e);
         }
-        return res;
+        writeResToConsole(res);
+        
     }
     
     
