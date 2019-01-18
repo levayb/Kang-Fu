@@ -16,7 +16,7 @@ public class Main {
         logger.setWaitingForUser(false, false, false);
         battleTest(logger);
         // kangarooGeneratorTest(logger);
-        // menuTest(logger);
+        menuTest(logger);
         // fileTester(logger);
         // testWriteKangaroosToFile();
         
