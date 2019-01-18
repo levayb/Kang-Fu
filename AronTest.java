@@ -14,7 +14,7 @@ public class AronTest {
         Logger logger = new Logger();
         logger.setLogging(false, true, true);
         logger.setWaitingForUser(false, false, false);
-        battleTest(logger);
+        // battleTest(logger);
         // kangarooGeneratorTest(logger);
         // menuTest(logger);
         fileTester(logger);
@@ -52,15 +52,9 @@ public class AronTest {
     }
     
     public static void fileTester(Logger logger) {
-        FileManager fileManager = new FileManager();
-        try {
-            String[][] s = fileManager.read("files/goat.csv");
-           
-            logger.tablePrinter.printTable(s);
-            fileManager.write("files/output", s);
-        } catch (IOException e) {
-            System.out.println(e);
-        }
+        HistoricalDatas hd = new HistoricalDatas(logger);
+        hd.readResultFromFile();
+        
     
     }
     public static void testWriteKangaroosToFile(){
